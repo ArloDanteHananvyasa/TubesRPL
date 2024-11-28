@@ -1,0 +1,114 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Inter';
+    background-color:  #94c3ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header style */
+.header {
+    width: 100%;
+    background-color: #333;
+    padding: 5px 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    max-height: 70px;
+    width: auto;
+    margin-left: -20px;
+}
+
+
+/* Main container style */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    background-color: #23426b;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Image section */
+.image-section {
+    flex: 1;
+    background-color: #94c3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Welcome section */
+.welcome-section {
+    flex: 1;
+    background-color: #23426b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.welcome-section h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+    text-align: center;
+}
+
+.login {
+    background-color: #333;
+    color: white;
+    font-family:'Inter';
+}
+
+.login:hover {
+    background-color: #4a90e2;
+}
+
+.signup {
+    background-color: #333;
+    color: white;
+    font-family:'Inter';
+}
+
+.signup:hover {
+    background-color: #4a90e2;
+}
