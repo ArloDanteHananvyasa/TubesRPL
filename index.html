@@ -1,57 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /* template font */
-        @font-face {
-            font-family: 'Inter';
-            src: url('fonts/Inter-Regular.woff2') format('woff2'),
-                url('fonts/Inter-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        /* Template warna */
-        :root {
-            --button: #2C2C2C;
-            --window: #23436B;
-            --background: #94c3ff;
-        }
-
-        /* contoh penggunaan */
-        body {
-            background-color: var(--background);
-        }
-
-        div {
-            background-color: var(--window);
-        }
-
-        button {
-            background-color: var(--button);
-        }
-
-        p {
-            font-family: 'Inter';
-        }
-    </style>
-
-    <!-- jangan lupa tambahin ini ke "HEAD" htmlnya -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <title>Validasi Booking</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div>
-        <p style="color: white;">TEST</p>
-    </div>
-    <button>
-        <p style="color: white;">TEST</p>
-    </button>
+    <header>
+        <div class="logo">
+            <h1>CliniX</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+        <div class="user-icon">
+            <img src="user-icon.png" alt="User Icon">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Validasi Booking</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Umur</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Hari</th>
+                            <th>Jam</th>
+                            <th>Dokter</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jane Doe</td>
+                            <td>34</td>
+                            <td>Perempuan</td>
+                            <td>Senin</td>
+                            <td>10.00</td>
+                            <td>Dr. John Doe</td>
+                            <td><button>Diagnosa</button></td>
+                        </tr>
+                        <tr>
+                            <td>Jenie Lili</td>
+                            <td>21</td>
+                            <td>Perempuan</td>
+                            <td>Senin</td>
+                            <td>10.00</td>
+                            <td>Dr. Lisa</td>
+                            <td><button>Diagnosa</button></td>
+                        </tr>
+                        <tr>
+                            <td>Pablo</td>
+                            <td>28</td>
+                            <td>Laki-laki</td>
+                            <td>Senin</td>
+                            <td>14.00</td>
+                            <td>Dr. John Doe</td>
+                            <td><button>Diagnosa</button></td>
+                        </tr>
+                        <tr>
+                            <td>Diana</td>
+                            <td>34</td>
+                            <td>Perempuan</td>
+                            <td>Senin</td>
+                            <td>15.00</td>
+                            <td>Dr. Lisa</td>
+                            <td><button>Diagnosa</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 </body>
-
 </html>
