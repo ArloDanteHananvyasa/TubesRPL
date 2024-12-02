@@ -98,6 +98,11 @@ thead th {
     font-size: 1em;
 }
 
+thead td {
+
+    color: #000;
+}
+
 tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
 }
@@ -109,6 +114,7 @@ tbody tr:nth-child(even) {
 tbody td {
     padding: 10px;
     font-size: 0.9em;
+    color: #000;
 }
 
 button {
