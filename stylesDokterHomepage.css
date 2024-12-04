@@ -29,6 +29,14 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px; 
+    height: auto;
+    margin-right: 10px;
 }
 
 .profile-icon img {
@@ -77,4 +85,5 @@ body {
     font-weight: bold;
     text-transform: capitalize;
     letter-spacing: 0.5px;
+    justify-: center;
 }
