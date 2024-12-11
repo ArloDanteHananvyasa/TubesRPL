@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 </head>
 <body>
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-    </div>
+    <header class="header">
+        <div class="logo-container">
+            <img src="clinix.png" alt="CliniX Logo" class="logo">
+            <a href="#" class="home">Home</a>
+        </div>
+        <nav class="nav">
+            <a href="#" class="nav-link profile-icon">
+                <img src="user-icon.png" alt="User Logo" class="user-logo">
+            </a>
+        </nav>
+    </header>
     <div class="container">
-    <div class="login-container">
+        <div class="DaftarCont">
         <h2>Detail Pembayaran</h2>
         <div class="list-Resep">
             <table class="invoice-table">
@@ -35,7 +39,8 @@
             </table>
         </div>
         <div class="button-container">
-            <button type="button" class="btn-signup">Methode Pembayaran</button>
+            <button type="button" class="btn-kembali">Bayar Ke Kasir</button>
+            <button type="button" class="btn-kembali">Kembali</button>
         </div>
     </div>
     </div>
