@@ -1,26 +1,32 @@
+/* Reset dan style dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #94c3ff;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
+/* Navbar styling */
 .navbar {
     background-color: #2C2C2C;
-    padding: 10px;
-    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1vh 0;
 }
-
-.nav-user img {
-    height: 32px;
-    /* Menyesuaikan tinggi gambar sesuai keinginan */
-    width: 32px;
-    /* Menyesuaikan lebar gambar jika diperlukan */
-    object-fit: cover;
-    /* Menjaga gambar agar tidak terdistorsi */
-}
-
 
 .nav-content {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,70 +35,129 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .nav-logo img {
     height: 40px;
-    margin-right: 10px;
+    width: auto;
+}
+
+.nav-logo span {
+    color: white;
+    font-size: 1.2rem;
 }
 
 .nav-user img {
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
 }
 
+/* Container utama */
 .container {
-    padding: 20px;
+    width: 90%;
     max-width: 1200px;
-    margin: auto;
+    margin: 80px auto 2rem;
+    padding: 2rem;
 }
 
 .list-container {
-    background: #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 0 auto;
+    width: 100%;
 }
 
+/* Judul */
 h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
     text-align: center;
+    color: #23436B;
+    margin-bottom: 2rem;
+    font-size: 2rem;
 }
 
+/* Tabel styling */
 .patient-table {
     width: 100%;
     border-collapse: collapse;
-}
-
-.patient-table th,
-.patient-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+    margin: 0 auto;
 }
 
 .patient-table th {
     background-color: #23436B;
     color: white;
+    padding: 1rem;
+    text-align: left;
 }
 
-.patient-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+.patient-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
 }
 
 .patient-table tr:hover {
-    background-color: #ddd;
+    background-color: #f5f5f5;
 }
 
-.edit-icon {
-    text-decoration: none;
-    font-size: 18px;
-    color: #4CAF50;
+/* Tombol styling */
+.action-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.edit-icon:hover {
-    color: #3e8e41;
+.action-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsivitas */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+        margin-top: 100px;
+    }
+
+    .list-container {
+        padding: 1rem;
+    }
+
+    .patient-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .nav-logo img,
+    .nav-user img {
+        height: 30px;
+        width: auto;
+    }
+
+    .nav-logo span {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .patient-table th,
+    .patient-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
 }
