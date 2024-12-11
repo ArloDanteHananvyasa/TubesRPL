@@ -24,13 +24,16 @@ body {
   align-items: center;
 }
 
-.nav-link {
+.home {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  font-size: larger;
 }
 
-.nav-link:hover {
+.home:hover {
   text-decoration: underline;
 }
 
@@ -106,4 +109,20 @@ body {
 
 .btn:hover {
   background-color: #555555;
+}
+
+.header .logo{
+  max-height: 70px;
+  width: auto;
+  margin-left: -20px;
+}
+
+.header .user-logo{
+  max-height: 70px;
+  width: auto;
+  margin-left: -20px;
+}
+
+.logo-container{
+  display: flex;
 }
