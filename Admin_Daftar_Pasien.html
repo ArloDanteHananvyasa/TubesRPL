@@ -69,14 +69,7 @@
                 <h3>Tambah Tagihan</h3>
                 <form id="billing-form">
                     <label for="doctor-price">Dokter:</label>
-                    <input type="number" id="doctor-price" name="doctor-price" placeholder="Masukkan tarif dokter" required>
-                    
-                    <label for="checkup-price">Check-up:</label>
-                    <input type="number" id="checkup-price" name="checkup-price" placeholder="Masukkan tarif check-up" required>
-                    
-                    <label for="lab-price">Tes Lab:</label>
-                    <input type="number" id="lab-price" name="lab-price" placeholder="Masukkan tarif tes lab" required>
-                    
+                    <input type="number" id="doctor-price" name="doctor-price" placeholder="Masukkan tarif dokter" required>                    
                     <button type="submit" class="btn-confirm">Simpan</button>
                 </form>
             </div>
@@ -112,12 +105,7 @@
         billingForm.addEventListener("submit", (event) => {
             event.preventDefault(); // Prevent page reload
             const doctorPrice = document.getElementById("doctor-price").value;
-            const checkupPrice = document.getElementById("checkup-price").value;
-            const labPrice = document.getElementById("lab-price").value;
-    
             console.log(`Harga Dokter: ${doctorPrice}`);
-            console.log(`Harga Check-up: ${checkupPrice}`);
-            console.log(`Harga Tes Lab: ${labPrice}`);
     
             alert("Tagihan berhasil disimpan!");
             modal.style.display = "none"; // Close the modal
