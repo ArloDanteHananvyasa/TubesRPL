@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        /* template font */
-        @font-face {
-            font-family: 'Inter';
-            src: url('fonts/Inter-Regular.woff2') format('woff2'),
-                url('fonts/Inter-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+      /* template font */
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-Regular.woff2") format("woff2"),
+          url("fonts/Inter-Regular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
 
-        /* Template warna */
-        :root {
-            --button: #2C2C2C;
-            --window: #23436B;
-            --background: #94c3ff;
-        }
+      /* Template warna */
+      :root {
+        --button: #2c2c2c;
+        --window: #23436b;
+        --background: #94c3ff;
+      }
 
-        /* contoh penggunaan */
-        body {
-            background-color: var(--background);
-        }
+      /* contoh penggunaan */
+      body {
+        background-color: var(--background);
+      }
 
-        div {
-            background-color: var(--window);
-        }
+      button {
+        background-color: var(--button);
+      }
 
-        button {
-            background-color: var(--button);
-        }
-
-        p {
-            font-family: 'Inter';
-        }
+      p {
+        font-family: "Inter";
+      }
     </style>
 
+    <link rel="stylesheet" href="style.css" />
+
     <!-- jangan lupa tambahin ini ke "HEAD" htmlnya -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <div>
-        <p style="color: white;">TEST</p>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <img src="clinix.png" alt="Logo" class="logo-img" />
+          CliniX
+        </div>
+
+        <div class="profile-icon">
+          <img src="profile-icon.png" alt="Profile" />
+        </div>
+      </header>
+      <main class="main-content">
+        <div class="card" id="btn-registrasi">
+          <div class="icon">
+            <img src="registration.png" alt="Regsitration Icon" />
+          </div>
+          <div class="text">Registrasi</div>
+        </div>
+
+        <div class="card" id="btn-booking">
+          <div class="icon">
+            <img src="appointment.png" alt="Booking Icon" />
+          </div>
+          <div class="text">Booking</div>
+        </div>
+
+        <div class="card" id="btn-lihat_resep">
+          <div class="icon">
+            <img src="medicine.png" alt="Recipe Icon" />
+          </div>
+          <div class="text">Lihat Resep</div>
+        </div>
+
+        <div class="card" id="btn-pembayaran">
+          <div class="icon">
+            <img src="payment.png" alt="Payment Icon" />
+          </div>
+          <div class="text">Pembayaran</div>
+        </div>
+      </main>
     </div>
-    <button>
-        <p style="color: white;">TEST</p>
-    </button>
-</body>
-
+  </body>
 </html>
