@@ -1,128 +1,146 @@
-/* styles.css */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #cce0ff;
-  color: #ffffff;
-}
-
-.header {
-  background-color: #333333;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  color: white;
-}
-
-.header .logo h1 {
-  margin: 0;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.home {
-  color: white;
-  text-decoration: none;
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
-  font-size: larger;
-}
-
-.home:hover {
-  text-decoration: underline;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 50px);
-}
-
-.form-container {
-  background-color: #003366;
-  padding: 40px;
-  border-radius: 10px;
-  width: 700px;
-  position: relative;
-}
-
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-content {
-  background-color: #cce0ff;
-  padding: 40px;
-  border-radius: 10px;
-  display: flex;
-  gap: 20px;
-}
-
-.column {
-  flex: 1;
-}
-
-.separator {
-  width: 1px;
-  background-color: #003366;
-  margin: 0 10px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #003366;
-}
-
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  color: #003366;
-}
-
-.btn {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background-color: #333333;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.btn:hover {
-  background-color: #555555;
-}
-
-.header .logo{
-  max-height: 70px;
-  width: auto;
-  margin-left: -20px;
-}
-
-.header .user-logo{
-  max-height: 70px;
-  width: auto;
-  margin-left: -20px;
-}
-
-.logo-container{
-  display: flex;
-}
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e8f0ff;
+  }
+  
+  .header {
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .header .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header .logo {
+    max-height: 70px;
+    width: auto;
+    margin-right: 20px;
+  }
+  
+  .header .home {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+  }
+  
+  .header .home:hover {
+    text-decoration: underline;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav .profile-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .nav .user-logo {
+    max-height: 40px;
+    width: auto;
+    border-radius: 50%;
+  }
+  
+  .container {
+    margin: 20px auto;
+    max-width: 1100px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .container .header {
+    background-color: #2e3b4e;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .doctor-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .doctor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .doctor-item:last-child {
+    border-bottom: none;
+  }
+  
+  .doctor-info {
+    display: flex;
+    align-items: center;
+    width: 230px;
+  }
+  
+  .doctor-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .doctor-info .details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .doctor-info .details .name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .doctor-info .details .specialty {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .schedule {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+  }
+  
+  .schedule .days {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  .schedule .hours {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .book-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .book-btn:hover {
+    background-color: #555;
+  }
+  

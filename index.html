@@ -1,52 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /* template font */
-        @font-face {
-            font-family: 'Inter';
-            src: url('fonts/Inter-Regular.woff2') format('woff2'),
-                url('fonts/Inter-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        /* Template warna */
-        :root {
-            --button: #2C2C2C;
-            --window: #23436B;
-            --background: #94c3ff;
-        }
-
-        /* contoh penggunaan */
-        body {
-            background-color: var(--background);
-        }
-
-        div {
-            background-color: var(--window);
-        }
-
-        button {
-            background-color: var(--button);
-        }
-
-        p {
-            font-family: 'Inter';
-        }
-    </style>
-
-    <!-- jangan lupa tambahin ini ke "HEAD" htmlnya -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <title>Booking Sesi</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="logo-container">
             <img src="clinix.png" alt="CliniX Logo" class="logo">
@@ -58,12 +18,116 @@
             </a>
         </nav>
     </header>
-    <div>
-        <p style="color: white;">TEST</p>
+    <div class="container">
+        <div class="header">Booking Sesi</div>
+        <div class="doctor-list">
+            <!-- Doctor Item -->
+            <div class="doctor-item">
+                <div class="doctor-info">
+                    <img src="https://via.placeholder.com/60" alt="Doctor">
+                    <div class="details">
+                        <div class="name">Dr Lisa Sp.JP</div>
+                        <div class="specialty">Spesialis Jantung</div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Senin</th>
+                                <th>Selasa</th>
+                                <th>Rabu</th>
+                                <th>Kamis</th>
+                                <th>Jumat</th>
+                                <th>Sabtu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10:00 - 14:00</td>
+                                <td>12:00 - 16:00</td>
+                                <td>10:00 - 14:00</td>
+                                <td>12:00 - 16:00</td>
+                                <td>10:00 - 14:00</td>
+                                <td>10:00 - 12:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="book-btn">Book</button>
+            </div>
+            <!-- Doctor Item -->
+            <div class="doctor-item">
+                <div class="doctor-info">
+                    <img src="https://via.placeholder.com/60" alt="Doctor">
+                    <div class="details">
+                        <div class="name">Dr John Doe Sp.S</div>
+                        <div class="specialty">Spesialis Saraf</div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Senin</th>
+                                <th>Selasa</th>
+                                <th>Rabu</th>
+                                <th>Kamis</th>
+                                <th>Jumat</th>
+                                <th>Sabtu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08:00 - 12:00</td>
+                                <td>10:00 - 14:00</td>
+                                <td>08:00 - 12:00</td>
+                                <td>10:00 - 14:00</td>
+                                <td>08:00 - 12:00</td>
+                                <td>08:00 - 10:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="book-btn">Book</button>
+            </div>
+            <!-- Doctor Item -->
+            <div class="doctor-item">
+                <div class="doctor-info">
+                    <img src="https://via.placeholder.com/60" alt="Doctor">
+                    <div class="details">
+                        <div class="name">Dr Leeman Sp.P</div>
+                        <div class="specialty">Spesialis Paru</div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Senin</th>
+                                <th>Selasa</th>
+                                <th>Rabu</th>
+                                <th>Kamis</th>
+                                <th>Jumat</th>
+                                <th>Sabtu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09:00 - 13:00</td>
+                                <td>11:00 - 15:00</td>
+                                <td>09:00 - 13:00</td>
+                                <td>11:00 - 15:00</td>
+                                <td>09:00 - 13:00</td>
+                                <td>09:00 - 11:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="book-btn">Book</button>
+            </div>
+            <!-- Add more doctor items as needed -->
+        </div>
     </div>
-    <button>
-        <p style="color: white;">TEST</p>
-    </button>
 </body>
-
 </html>
