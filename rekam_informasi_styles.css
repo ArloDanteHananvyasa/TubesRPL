@@ -1,3 +1,4 @@
+/* Reset dasar */
 * {
     margin: 0;
     padding: 0;
@@ -8,113 +9,135 @@
 body {
     background-color: #B4D4F9;
     min-height: 100vh;
+    width: 100%;
 }
 
+/* Navbar Styles */
 .navbar {
     background-color: #2C2C2C;
-    /* Changed from white to black */
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.nav-user img {
-    height: 32px;  /* Menyesuaikan tinggi gambar sesuai keinginan */
-    width: 32px;   /* Menyesuaikan lebar gambar jika diperlukan */
-    object-fit: cover; /* Menjaga gambar agar tidak terdistorsi */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1% 0;
+    z-index: 1000;
 }
 
 .nav-content {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 3%;
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    height: 40px;
+    width: auto;
 }
 
-.nav-logo img {
-    height: 30px;
-}
-
-.nav-logo span {
-    font-weight: 500;
+.nav-left span {
     color: white;
-    /* Changed from #333 to white for better visibility on black */
+    font-size: 1.2rem;
 }
 
+.nav-user img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+/* Container Styles */
 .container {
+    width: 90%;
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+    margin: 80px auto 2%;
+    padding: 2%;
 }
 
 .form-container {
     background-color: #1B3B63;
-    border-radius: 15px;
-    padding: 2rem;
-    color: white;
+    border-radius: 1%;
+    padding: 4%;
+    width: 100%;
+    margin: 0 auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
+    margin-bottom: 3%;
+    font-size: 2em;
     color: white;
 }
 
+/* Form Styles */
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 48% 48%;
+    gap: 4%;
+    margin-bottom: 4%;
 }
 
 .form-field {
-    margin-bottom: 1.5rem;
+    margin-bottom: 6%;
+    width: 100%;
+}
+
+.form-field:last-child {
+    margin-bottom: 0;
 }
 
 label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2%;
+    font-size: 1em;
     color: white;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: 3%;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: white;
 }
 
+/* Button Styles */
 .upload-btn {
     width: 100%;
-    padding: 0.75rem;
+    padding: 3%;
     background-color: #2C2C2C;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 
 .submit-container {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3%;
 }
 
 .submit-btn {
-    padding: 0.75rem 2rem;
+    padding: 1.5% 5%;
     background-color: #2C2C2C;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1em;
+    min-width: 150px;
+    transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover,
@@ -122,17 +145,54 @@ input[type="text"] {
     background-color: #404040;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .form-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: 100%;
+        gap: 2%;
     }
 
     .container {
-        padding: 1rem;
+        width: 95%;
+        margin-top: 100px;
     }
 
     .form-container {
-        padding: 1.5rem;
+        padding: 6%;
+    }
+
+    .form-field {
+        margin-bottom: 4%;
+    }
+
+    input[type="text"] {
+        padding: 4%;
+    }
+
+    .submit-btn {
+        padding: 3% 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 2% 0;
+    }
+
+    .nav-logo {
+        height: 30px;
+    }
+
+    .nav-user img {
+        height: 30px;
+        width: 30px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .form-container {
+        padding: 8%;
     }
 }
