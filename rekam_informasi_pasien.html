@@ -9,11 +9,10 @@
 </head>
 
 <body>
-    </div>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="nav-logo">
-                <img src="clinix.png" alt="CliniX Logo">
+            <div class="nav-left">
+                <img src="clinix.png" alt="CliniX Logo" class="nav-logo">
                 <span>Home</span>
             </div>
             <div class="nav-user">
@@ -25,49 +24,39 @@
     <div class="container">
         <div class="form-container">
             <h1>Perekaman Informasi Pasien</h1>
-
-            <form action="#">
+            <form>
                 <div class="form-grid">
-                    <div class="form-left">
+                    <div class="form-column">
                         <div class="form-field">
                             <label for="tekananDarah">Tekanan Darah</label>
                             <input type="text" id="tekananDarah" name="tekananDarah">
                         </div>
-
                         <div class="form-field">
                             <label for="tinggiBadan">Tinggi Badan</label>
                             <input type="text" id="tinggiBadan" name="tinggiBadan">
                         </div>
-
                         <div class="form-field">
                             <label for="beratBadan">Berat Badan</label>
                             <input type="text" id="beratBadan" name="beratBadan">
                         </div>
                     </div>
-
-                    <div class="form-right">
+                    <div class="form-column">
                         <div class="form-field">
                             <label for="suhuBadan">Suhu Badan</label>
                             <input type="text" id="suhuBadan" name="suhuBadan">
                         </div>
-
                         <div class="form-field">
                             <label for="keluhan">Keluhan Pasien</label>
                             <input type="text" id="keluhan" name="keluhan">
                         </div>
-
                         <div class="form-field">
-                            <a href="upload_lab.html" class="upload-btn"
-                                style="text-decoration: none; display: block; text-align: center;">
-                                Upload Hasil Lab
-                            </a>
+                            <button type="button" class="upload-btn">Upload Hasil Lab</button>
                         </div>
-
                     </div>
-
-                    <div class="submit-container">
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </div>
+                </div>
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
             </form>
         </div>
     </div>
