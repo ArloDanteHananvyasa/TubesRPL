@@ -59,10 +59,41 @@
             </table>
         </div>
         <div class="button-container">
-            <button type="submit" class="btn-kembali">Info Diagnosa</button>
+            <button type="button" id="btnInfoDiagnosa" class="btn-kembali">Info Diagnosa</button>
             <button type="button" class="btn-kembali">Kembali</button>
         </div>
     </div>
     </div>
+    <div id="modalDiagnosa" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Diagnosa Dokter</h2>
+            <p id="teksDiagnosa" style="font-size: 18px; font-weight: normal;"></p>
+        </div>
+    </div>
+    
+    <script>
+        // Simulasi diagnosa dari dokter
+        const diagnosa = "Pasien mengalami gejala flu ringan. Disarankan istirahat yang cukup dan minum obat sesuai resep.";
+    
+        // Event untuk menampilkan modal dengan diagnosa
+        document.getElementById("btnInfoDiagnosa").addEventListener("click", function () {
+            document.getElementById("teksDiagnosa").innerText = diagnosa; // Menampilkan teks diagnosa
+            document.getElementById("modalDiagnosa").style.display = "block"; // Tampilkan modal
+        });
+    
+        // Event untuk menutup modal
+        document.querySelector(".close").addEventListener("click", function () {
+            document.getElementById("modalDiagnosa").style.display = "none";
+        });
+    
+        // Tutup modal ketika klik di luar modal
+        window.onclick = function (event) {
+            let modal = document.getElementById("modalDiagnosa");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
