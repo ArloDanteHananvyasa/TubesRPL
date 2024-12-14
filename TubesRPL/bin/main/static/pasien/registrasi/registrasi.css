@@ -1,0 +1,306 @@
+.registrasi-pasien,
+.registrasi-pasien * {
+  box-sizing: border-box;
+}
+
+.registrasi-pasien {
+  background: #94c2ff;
+  padding: 14.65px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+}
+
+.content2 {
+  background: #23426b;
+  border-radius: 39.4px;
+  display: flex;
+  flex-direction: column;
+  gap: 15.48px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 866.88px;
+  position: absolute;
+  right: 145.5px;
+  left: 174.49560546875px;
+  top: 162px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.menu-shortcut {
+  border-radius: 11.26px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.registrasi-pasien2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(--display-large-font, "Roboto-Regular", sans-serif);
+  font-size: 80.2145004272461px;
+  line-height: 90.07px;
+  letter-spacing: -0.35px;
+  font-weight: 400;
+  position: absolute;
+  left: 217.5px;
+  top: 200px;
+  width: 779.63px;
+  height: 83.03px;
+  -webkit-text-stroke: 1.407271385192871px #ffffff;
+}
+
+.register-btn {
+  background: var(--var-sds-color-background-brand-default, #2c2c2c);
+  border-radius: 16px;
+  border-style: solid;
+  border-color: var(--var-sds-color-border-brand-default, #2c2c2c);
+  border-width: 2px;
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 879.5px;
+  top: 857px;
+  overflow: hidden;
+}
+
+.register {
+  color: var(--var-sds-color-text-brand-on-brand, #f5f5f5);
+  text-align: left;
+  font-family: var(--var-sds-typography-body-font-family,
+      "Inter-Regular",
+      sans-serif);
+  font-size: 32px;
+  line-height: 100%;
+  font-weight: var(--var-sds-typography-body-font-weight-regular, 400);
+  position: relative;
+}
+
+.nama-lengkap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--var-sds-size-space-200, 12.15px);
+  align-items: center;
+  justify-content: center;
+  width: 629px;
+  height: 107.87px;
+  position: absolute;
+  left: 237.5px;
+  top: 342px;
+}
+
+.label {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(--var-sds-typography-body-font-family,
+      "Inter-Regular",
+      sans-serif);
+  font-size: 24.309179306030273px;
+  line-height: 140%;
+  font-weight: var(--var-sds-typography-body-font-weight-regular, 400);
+  position: relative;
+  align-self: stretch;
+}
+
+.input {
+  background: var(--var-sds-color-background-default-default, #ffffff);
+  border-radius: 11.44px;
+  border-style: solid;
+  border-color: var(--var-sds-color-border-default-default, #d9d9d9);
+  border-width: 1.52px;
+  padding: var(--var-sds-size-space-300, 18.23px) var(--var-sds-size-space-400, 24.31px) var(--var-sds-size-space-300, 18.23px) var(--var-sds-size-space-400, 24.31px);
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  min-width: 364.64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.value {
+  color: var(--var-sds-color-text-default-default, #1e1e1e);
+  text-align: left;
+  font-family: var(--var-sds-typography-body-font-family,
+      "Inter-Regular",
+      sans-serif);
+  font-size: var(--var-sds-typography-body-size-medium, 24.309179306030273px);
+  line-height: 100%;
+  font-weight: var(--var-sds-typography-body-font-weight-regular, 400);
+  position: relative;
+  flex: 1;
+}
+
+.tempat-tanggal-lahir {
+  display: flex;
+  flex-direction: column;
+  gap: var(--var-sds-size-space-200, 12.15px);
+  align-items: center;
+  justify-content: center;
+  width: 629px;
+  height: 107.87px;
+  position: absolute;
+  left: 237.5px;
+  top: 486px;
+}
+
+.jenis-kelamin {
+  display: flex;
+  flex-direction: column;
+  gap: var(--var-sds-size-space-200, 12.15px);
+  align-items: center;
+  justify-content: center;
+  width: 629px;
+  height: 107.87px;
+  position: absolute;
+  left: 237.5px;
+  top: 630px;
+}
+
+.no-hp {
+  display: flex;
+  flex-direction: column;
+  gap: var(--var-sds-size-space-200, 12.15px);
+  align-items: center;
+  justify-content: center;
+  width: 629px;
+  height: 107.87px;
+  position: absolute;
+  left: 1048.5px;
+  top: 342px;
+}
+
+.alamat-lengkap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--var-sds-size-space-200, 12.15px);
+  align-items: center;
+  justify-content: center;
+  width: 629px;
+  height: 107.87px;
+  position: absolute;
+  left: 1048.5px;
+  top: 486px;
+}
+
+.horizontal-full-width {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 412.33px;
+  height: 1.41px;
+  position: absolute;
+  left: calc(50% - 1.88px);
+  top: calc(50% - 197.94px);
+  overflow: visible;
+}
+
+.top-bar {
+  width: 1922.95px;
+  height: 118.63px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.rectangle-1 {
+  width: 1922.95px;
+  height: 118.63px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+.home {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 28.52682876586914px;
+  line-height: 100%;
+  font-weight: 700;
+  position: absolute;
+  left: 196.25px;
+  top: 52.73px;
+}
+
+.image-2024-10-14-221904802-removebg-preview-1 {
+  width: 143.53px;
+  height: 105.45px;
+  position: absolute;
+  left: 4.39px;
+  top: 7.32px;
+  object-fit: cover;
+}
+
+.trailing-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 25.93px;
+  align-items: center;
+  justify-content: center;
+  width: 124.49px;
+  height: 124.49px;
+  position: absolute;
+  right: 24.46px;
+  top: -2.93px;
+}
+
+.container {
+  border-radius: 259.35px;
+  display: flex;
+  flex-direction: row;
+  gap: 25.93px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.state-layer {
+  padding: 20.75px;
+  display: flex;
+  flex-direction: row;
+  gap: 25.93px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 62.24px;
+  height: 62.24px;
+  position: relative;
+  overflow: visible;
+}

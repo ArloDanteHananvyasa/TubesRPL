@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Dokter</title>
+    <link rel="stylesheet" href="/dokter/homepage/stylesDokterHomepage.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="/clinix.png" alt="Logo" class="logo-img">
+                CliniX
+            </div>
+
+            <div class="profile-icon">
+                <img src="/dokter/homepage/profile-icon.png" alt="Profile">
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="card" id="schedule-card">
+                <div class="icon">
+                    <img src="/dokter/homepage/calendar-icon.png" alt="Calendar Icon">
+                </div>
+                <div class="text">Lihat Jadwal</div>
+            </div>
+            <a th:href="@{/dokter/lihat-pasien}">
+                <div class="card" id="patients-card">
+                    <div class="icon">
+                        <img src="/dokter/homepage/user-icon.png" alt="User Icon">
+                    </div>
+                    <div class="text">List Pasien</div>
+                </div>
+            </a>
+        </main>
+    </div>
+</body>
+
+</html>

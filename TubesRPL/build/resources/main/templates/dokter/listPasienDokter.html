@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pasien</title>
+    <link rel="stylesheet" href="/dokter/listPasien/listPasienDokter.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>CliniX</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/dokter/home}">Home</a></li>
+            </ul>
+        </nav>
+        <div class="user-icon">
+            <img src="/dokter/listPasien/user-icon.png" alt="User Icon">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Daftar Pasien</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Umur</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Cek Hasil Pemeriksaan</th>
+                            <th>Diagnosa dan Resep</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- jadiin data -->
+                        <tr>
+                            <td>TEST</td>
+                            <td>TEST</td>
+                            <td>TEST</td>
+                            <td><a th:href="@{/dokter/diagnosa}"><button>Lihat Detail</button></a></td>
+                            <!-- disable aja kalo udah dipencet -->
+                            <td><a th:href="@{/dokter/diagnosa}"><button>Diagnosa dan Resep</button></a></td>
+                        </tr>
+                        <!-- jadiin data -->
+                        <tr th:each="row : ${rows}">
+                            <td th:text="${row.nama}"></td>
+                            <td th:text="${row.umur}"></td>
+                            <td th:text="${row.gender}"></td>
+                            <!-- disable aja kalo udah dipencet -->
+                            <td><a
+                                    th:href="@{/dokter/detail-pasien(nik=${row.nik}, idPendaftaran=${row.idPendaftaran})}"><button>Lihat
+                                        Detail</button></a></td>
+                            <td><a th:href="@{/dokter/diagnosa(nik=${row.nik}, idPendaftaran=${row.idPendaftaran})}"><button>Diagnosa
+                                        dan Resep</button></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
