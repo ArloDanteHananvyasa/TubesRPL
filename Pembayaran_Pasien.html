@@ -39,10 +39,38 @@
             </table>
         </div>
         <div class="button-container">
-            <button type="button" class="btn-kembali">Bayar Ke Kasir</button>
+            <button type="button" class="btn-kembali" id="btnBayar">Bayar Ke Kasir</button>
             <button type="button" class="btn-kembali">Kembali</button>
         </div>
     </div>
+    <div id="modalAntrian" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nomor Antrian Anda</h2>
+            <p id="nomorAntrian" style="font-size: 24px; font-weight: bold;"></p>
+        </div>
     </div>
+    </div>
+    <script>
+        // Event untuk menampilkan modal
+        document.getElementById("btnBayar").addEventListener("click", function () {
+            let noAntrian = Math.floor(Math.random() * 900) + 100; // Generate nomor antrian
+            document.getElementById("nomorAntrian").innerText = noAntrian; // Tampilkan nomor
+            document.getElementById("modalAntrian").style.display = "block"; // Tampilkan modal
+        });
+    
+        // Event untuk menutup modal
+        document.querySelector(".close").addEventListener("click", function () {
+            document.getElementById("modalAntrian").style.display = "none";
+        });
+    
+        // Tutup modal ketika klik di luar modal
+        window.onclick = function (event) {
+            let modal = document.getElementById("modalAntrian");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
