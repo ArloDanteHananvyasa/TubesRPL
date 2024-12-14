@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./vars.css">
+  <link rel="stylesheet" href="/pasien/registrasi/registrasi.css">
+
+
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: inline-block;
+      text-align: center;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="registrasi-pasien">
+    <div class="content2">
+      <div class="row">
+        <div class="menu-shortcut"></div>
+      </div>
+    </div>
+    <form th:method="post" th:action="@{/signup/submit}">
+      <div class="registrasi-pasien2">Registrasi Pasien</div>
+      <div class="register-btn">
+        <input type="submit" value="Submit"></a>
+      </div>
+      <div class="nama-lengkap">
+        <div class="label">Nama Lengkap</div>
+        <div class="input">
+          <input type="text" name="nama-lengkap" class="value" placeholder="Masukkan Nama Lengkap" required>
+        </div>
+      </div>
+      <div class="tempat-tanggal-lahir">
+        <div class="label">Tanggal Lahir</div>
+        <div class="input">
+          <input type="date" name="tgl-lahir" class="value" required>
+        </div>
+      </div>
+      <div class="jenis-kelamin">
+        <div class="label">Jenis Kelamin</div>
+        <div class="input">
+          <select name="jenis-kelamin" class="value" required>
+            <option value="" disabled selected>Pilih Jenis Kelamin</option>
+            <option value="pria">Pria</option>
+            <option value="wanita">Wanita</option>
+          </select>
+        </div>
+      </div>
+      <div class="no-hp">
+        <div class="label">No. HP</div>
+        <div class="input">
+          <input type="tel" name="no-hp" class="value" placeholder="Masukkan No HP" required>
+        </div>
+      </div>
+      <div class="nik">
+        <div class="label">NIK</div>
+        <div class="input">
+          <input type="text" name="nik" class="value" placeholder="Masukkan NIK" required>
+        </div>
+      </div>
+      <div class="alamat-lengkap">
+        <div class="label">Alamat Lengkap</div>
+        <div class="input">
+          <input type="text" name="alamat-lengkap" class="value" placeholder="Masukkan Alamat Lengkap" required>
+        </div>
+      </div>
+    </form>
+    <img class="horizontal-full-width" src="/pasien/registrasi/horizontal-full-width0.svg" />
+    <div class="top-bar">
+      <img class="rectangle-1" src="/pasien/registrasi/rectangle-10.svg" />
+      <img class="image-2024-10-14-221904802-removebg-preview-1" src="clinix.png" />
+      <div class="trailing-icon">
+        <div class="container">
+          <div class="state-layer">
+            <img class="icon" src="/pasien/registrasi/icon0.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

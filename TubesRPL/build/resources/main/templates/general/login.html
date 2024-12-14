@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="/general/login/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form th:action="@{/login/submit}" method="post">
+            <!-- Input for nomorTelepon -->
+            <div class="input-group">
+                <label for="nomorTelepon">Nomor Telepon</label>
+                <input type="text" id="nomorTelepon" name="nomorTelepon" placeholder="Masukkan nomor telepon anda..."
+                    required>
+            </div>
+            <!-- Input for password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password..." required>
+            </div>
+            <!-- Button container -->
+            <div class="button-container">
+                <button type="submit" class="btn-login">Login</button>
+                <button type="button" class="btn-signup">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
