@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      /* template font */
-      @font-face {
-        font-family: "Inter";
-        src: url("fonts/Inter-Regular.woff2") format("woff2"),
-          url("fonts/Inter-Regular.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-      }
 
-      /* Template warna */
-      :root {
-        --button: #2c2c2c;
-        --window: #23436b;
-        --background: #94c3ff;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage Admin</title>
+  <style>
+    /* template font */
+    @font-face {
+      font-family: "Inter";
+      src: url("fonts/Inter-Regular.woff2") format("woff2"),
+        url("fonts/Inter-Regular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
 
-      /* contoh penggunaan */
-      body {
-        background-color: var(--background);
-      }
+    /* Template warna */
+    :root {
+      --button: #2c2c2c;
+      --window: #23436b;
+      --background: #94c3ff;
+    }
 
-      button {
-        background-color: var(--button);
-      }
+    /* contoh penggunaan */
+    body {
+      background-color: var(--background);
+    }
 
-      p {
-        font-family: "Inter";
-      }
-    </style>
+    button {
+      background-color: var(--button);
+    }
 
-    <link rel="stylesheet" href="style.css" />
+    p {
+      font-family: "Inter";
+    }
+  </style>
 
-    <!-- jangan lupa tambahin ini ke "HEAD" htmlnya -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <link rel="stylesheet" href="/admin/homepage/homepage.css" />
 
-  <body>
-    <div class="container">
-      <header class="header">
-        <div class="logo">
-          <img src="clinix.png" alt="Logo" class="logo-img" />
-          CliniX
+  <!-- jangan lupa tambahin ini ke "HEAD" htmlnya -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <img src="/clinix.png" alt="Logo" class="logo-img" />
+        CliniX
+      </div>
+
+      <div class="profile-icon">Admin</div>
+    </header>
+    <main class="main-content">
+      <div class="card" id="btn-jadwal">
+        <div class="icon">
+          <img src="/admin/homepage/calendar-icon.png" alt="Jadwal Icon" />
         </div>
+        <div class="text">Jadwal</div>
+      </div>
 
-        <div class="profile-icon">Admin</div>
-      </header>
-      <main class="main-content">
-        <div class="card" id="btn-jadwal">
-          <div class="icon">
-            <img src="calendar-icon.png" alt="Jadwal Icon" />
-          </div>
-          <div class="text">Jadwal</div>
+      <div class="card" id="btn-listPasien">
+        <div class="icon">
+          <img src="/admin/homepage/user-icon.png" alt="DaftarPasien Icon" />
         </div>
+        <div class="text">Daftar Pasien</div>
+      </div>
 
-        <div class="card" id="btn-listPasien">
-          <div class="icon">
-            <img src="user-icon.png" alt="DaftarPasien Icon" />
-          </div>
-          <div class="text">Daftar Pasien</div>
+      <div class="card" id="btn-validasi">
+        <div class="icon">
+          <img src="/admin/homepage/appointment.png" alt="Validasi Icon" />
         </div>
+        <div class="text">Validasi Booking</div>
+      </div>
 
-        <div class="card" id="btn-validasi">
-          <div class="icon">
-            <img src="appointment.png" alt="Validasi Icon" />
-          </div>
-          <div class="text">Validasi Booking</div>
+      <div class="card" id="btn-tagih">
+        <div class="icon">
+          <img src="/admin/homepage/medical.png" alt="Tagih Icon" />
         </div>
+        <div class="text">Tagih</div>
+      </div>
+    </main>
+  </div>
+</body>
 
-        <div class="card" id="btn-tagih">
-          <div class="icon">
-            <img src="medical.png" alt="Tagih Icon" />
-          </div>
-          <div class="text">Tagih</div>
-        </div>
-      </main>
-    </div>
-  </body>
 </html>

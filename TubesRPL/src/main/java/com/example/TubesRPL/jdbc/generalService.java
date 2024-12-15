@@ -32,13 +32,7 @@ public class generalService implements generalRepo {
 
         switch (check) {
             case 0:
-                List<pasienData> list = jdbc.query(
-                        "SELECT * FROM pasien WHERE nomortelepon = ? AND password = ?",
-                        this::mapRowToPasienData, nohp, pass);
-
-                ld = new loginData(list.get(0).getNik(), "-", list.get(0).getNama(), nohp, pass, "pasien");
-                break;
-
+                return null;
             case 1:
                 List<adminData> list1 = jdbc.query(
                         "SELECT * FROM petugas_administrasi WHERE nomortelepon = ? AND password = ?",
@@ -57,10 +51,18 @@ public class generalService implements generalRepo {
 
             case 3:
                 List<doctorData> list3 = jdbc.query(
-                        "SELECT * FROM dokter WHERE nomortelepon = ? AND password = ?",
+                        "SELECT * FROM dokter JOIN klinik on dokter.idKlinik = klinik.idKlinik WHERE nomortelepon = ? and password = ?",
                         this::mapRowToDoctorData, nohp, pass);
 
                 ld = new loginData("-", list3.get(0).getNip(), list3.get(0).getNama(), nohp, pass, "dokter");
+                break;
+
+            case 4:
+                List<pasienData> list4 = jdbc.query(
+                        "SELECT * FROM pasien WHERE nomortelepon = ? AND password = ?",
+                        this::mapRowToPasienData, nohp, pass);
+
+                ld = new loginData(list4.get(0).getNik(), "-", list4.get(0).getNama(), nohp, pass, "pasien");
                 break;
 
         }
@@ -84,11 +86,22 @@ public class generalService implements generalRepo {
             return 2;
         }
 
-        List<doctorData> list3 = jdbc.query("SELECT * FROM dokter WHERE nomortelepon = ?", this::mapRowToDoctorData,
+        List<doctorData> list3 = jdbc.query(
+                "SELECT * FROM dokter JOIN klinik on dokter.idKlinik = klinik.idKlinik WHERE nomortelepon = ?",
+                this::mapRowToDoctorData,
                 nohp);
 
         if (!list3.isEmpty()) {
             return 3;
+        }
+
+        List<pasienData> list4 = jdbc.query(
+                "SELECT * FROM pasien WHERE nomortelepon = ?",
+                this::mapRowToPasienData,
+                nohp);
+
+        if (!list4.isEmpty()) {
+            return 4;
         }
 
         return 0;
@@ -140,6 +153,7 @@ public class generalService implements generalRepo {
                 rs.getString("nipDokter"),
                 rs.getString("nama"),
                 rs.getInt("idKlinik"),
+                rs.getString("spesialisasi"),
                 rs.getDouble("tarif"),
                 rs.getInt("kuota"),
                 rs.getString("nomorTelepon"),

@@ -7,8 +7,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class resepData {
     private String namaObat;
+    private String jumlah;
     private String dosis;
-    private String instruksiPenggunaan;
+    private String catatan;
 }
 
 // private resepData mapRowToResepData(ResultSet rs, int rowNum) throws

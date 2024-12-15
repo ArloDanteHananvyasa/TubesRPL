@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Resep Obat</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/dokter/resep/resepStyle.css">
 </head>
 
 <body>
@@ -22,24 +22,27 @@
   <main>
     <div class="form-container">
       <h2>Tambah Resep Obat</h2>
-      <form id="add-resep-form">
-        <label for="nama-pasien">Nama Pasien</label>
-        <input type="text" id="nama-pasien" placeholder="Masukkan nama pasien" required>
-
+      <form th:action="@{/dokter/resep/add}" th:method="post" id="add-resep-form">
         <label for="nama-obat">Nama Obat</label>
-        <input type="text" id="nama-obat" placeholder="Masukkan nama obat" required>
+        <input type="text" id="nama-obat" placeholder="Masukkan nama obat" name="namaObat" required>
 
-        <label for="jumlah-dosis">Jumlah Dosis (kali per hari)</label>
-        <input type="number" id="jumlah-dosis" placeholder="Masukkan jumlah dosis per hari" min="1" required>
+        <label for="jumlah">Jumlah (berapa kapsul/ml)</label>
+        <input type="text" id="jumlah" placeholder="Masukkan jumlah yang harus dibeli oleh pasien" name="jumlahObat"
+          required>
 
-        <label for="waktu-minum">Waktu Minum</label>
-        <select id="waktu-minum" required>
-          <option value="" disabled selected>Pilih waktu minum</option>
-          <option value="sebelum-makan">Sebelum Makan</option>
-          <option value="sesudah-makan">Sesudah Makan</option>
-        </select>
+        <label for="dosis">Dosis (kali per hari)</label>
+        <input type="text" id="dosis" placeholder="Masukkan dosis per hari" name="dosisObat" required>
 
-        <button type="button" onclick="addResep()">Tambah Obat</button>
+        <label for="catatan">Catatan</label>
+        <input type="text" id="catatan" placeholder="Masukkan catatan untuk penggunaan obat" name="catatan" required>
+
+        <button type="submit">Tambah Obat</button>
+      </form>
+
+      <br>
+
+      <form th:action="@{/dokter/resep/submit}" th:method="get">
+        <button type="submit">Simpan Resep</button>
       </form>
     </div>
 
@@ -49,19 +52,24 @@
         <thead>
           <tr>
             <th>Nama Obat</th>
-            <th>Jumlah Dosis</th>
-            <th>Waktu Minum</th>
-            <th>Aksi</th>
+            <th>Jumlah</th>
+            <th>Dosis</th>
+            <th>Catatan</th>
           </tr>
         </thead>
         <tbody id="resep-list">
-          <!-- Resep akan ditambahkan di sini -->
+          <tr th:each="obat : ${listObat}">
+            <td th:text="${obat.namaObat}"></td>
+            <td th:text="${obat.jumlah}"></td>
+            <td th:text="${obat.dosis}"></td>
+            <td th:text="${obat.catatan}"></td>
+          </tr>
         </tbody>
       </table>
     </div>
   </main>
 
-  <script src="scripts.js"></script>
+  <!-- <script src="/dokter/resep/resepScript.js"></script> -->
 </body>
 
 </html>

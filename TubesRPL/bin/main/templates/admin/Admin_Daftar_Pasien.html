@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <title>Daftar Pasien Admin</title>
 </head>
+
 <body>
     <header class="header">
         <div class="logo-container">
@@ -69,7 +72,8 @@
                 <h3>Tambah Tagihan</h3>
                 <form id="billing-form">
                     <label for="doctor-price">Dokter:</label>
-                    <input type="number" id="doctor-price" name="doctor-price" placeholder="Masukkan tarif dokter" required>                    
+                    <input type="number" id="doctor-price" name="doctor-price" placeholder="Masukkan tarif dokter"
+                        required>
                     <button type="submit" class="btn-confirm">Simpan</button>
                 </form>
             </div>
@@ -80,7 +84,7 @@
         const modal = document.getElementById("modal");
         const closeModal = document.querySelector(".close");
         const billingForm = document.getElementById("billing-form");
-    
+
         // Attach event listeners to "Tambah Tagihan" buttons
         const buttons = document.querySelectorAll("button");
         buttons.forEach(button => {
@@ -88,30 +92,29 @@
                 modal.style.display = "flex"; // Show the modal
             });
         });
-    
+
         // Close modal when 'x' is clicked
         closeModal.addEventListener("click", () => {
             modal.style.display = "none";
         });
-    
+
         // Close modal when clicking outside the modal content
         window.addEventListener("click", (event) => {
             if (event.target === modal) {
                 modal.style.display = "none";
             }
         });
-    
+
         // Handle form submission
         billingForm.addEventListener("submit", (event) => {
             event.preventDefault(); // Prevent page reload
             const doctorPrice = document.getElementById("doctor-price").value;
             console.log(`Harga Dokter: ${doctorPrice}`);
-    
+
             alert("Tagihan berhasil disimpan!");
             modal.style.display = "none"; // Close the modal
         });
     </script>
 </body>
+
 </html>
-
-

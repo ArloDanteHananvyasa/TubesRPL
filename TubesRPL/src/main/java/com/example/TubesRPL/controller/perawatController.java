@@ -25,7 +25,14 @@ public class perawatController {
     private perawatRepo repo;
 
     @GetMapping("/home")
-    public String homepage() {
+    public String homepage(HttpSession session) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
+
         return "perawat/homepage";
     }
 
@@ -37,7 +44,7 @@ public class perawatController {
         loginData ld = (loginData) session.getAttribute("loginData");
 
         if (ld == null) {
-            return "general/login";
+            return "redirect:/login";
         }
 
         return "perawat/lihat_list_pasien";
@@ -53,7 +60,7 @@ public class perawatController {
         loginData ld = (loginData) session.getAttribute("loginData");
 
         if (ld == null) {
-            return "general/login";
+            return "redirect:/login";
         }
 
         return "perawat/rekam_informasi_pasien";
@@ -65,19 +72,19 @@ public class perawatController {
             @RequestParam("beratBadan") double beratBadan,
             @RequestParam("suhuBadan") double suhuBadan,
             @RequestParam("keluhan") String keluhan,
-            HttpSession session) {
+            HttpSession session, Model model) {
 
         loginData ld = (loginData) session.getAttribute("loginData");
 
         if (ld == null) {
-            return "general/login";
+            return "redirect:/login";
         }
 
         int idPendaftaran = (int) session.getAttribute("idPendaftaran");
 
         repo.sumbitDataPasien(idPendaftaran, tekananDarah, tinggiBadan, beratBadan, suhuBadan, keluhan, ld.getNip());
 
-        return "perawat/lihat_list_pasien";
+        return "redirect:/perawat/lihat-pasien";
     }
 
     @GetMapping("/upload")
@@ -87,7 +94,7 @@ public class perawatController {
         loginData ld = (loginData) session.getAttribute("loginData");
 
         if (ld == null) {
-            return "general/login";
+            return "redirect:/login";
         }
 
         session.setAttribute("nik", nik);
@@ -104,14 +111,14 @@ public class perawatController {
         loginData ld = (loginData) session.getAttribute("loginData");
 
         if (ld == null) {
-            return "general/login";
+            return "redirect:/login";
         }
 
         int idPendaftaran = (int) session.getAttribute("idPendaftaran");
 
         repo.sumbitLabPasien(idPendaftaran, Date.valueOf(LocalDate.parse(tanggal)), file);
 
-        return "perawat/lihat_list_pasien";
+        return "redirect:/perawat/lihat-pasien";
     }
 
 }

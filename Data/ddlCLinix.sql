@@ -102,7 +102,8 @@ CREATE TABLE hasil_lab (
 	idLab SERIAL PRIMARY KEY,
 	idPendaftaran INT REFERENCES pendaftaran(idPendaftaran),
 	tanggalLab DATE,
-	hasilLab BYTEA
+	hasilLab BYTEA,
+	namaFile VARCHAR(100)
 );
 
 CREATE TABLE diagnosa (
@@ -121,6 +122,7 @@ CREATE TABLE resep (
 CREATE TABLE resep_obat (
     idResep INT REFERENCES resep(idResep) ON DELETE CASCADE,
     namaObat VARCHAR(50),
+    jumlah VARCHAR(50),
     dosis VARCHAR(50),
     instruksiPenggunaan TEXT
 );

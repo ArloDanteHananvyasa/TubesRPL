@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.TubesRPL.TubesRplApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-14T03:52:39" hostname="DESKTOP-LAEV87T" time="0.589">
+<testsuite name="com.example.TubesRPL.TubesRplApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-15T08:17:03" hostname="DESKTOP-LAEV87T" time="0.552">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.TubesRPL.TubesRplApplicationTests" time="0.589"/>
-  <system-out><![CDATA[10:52:37.968 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.TubesRPL.TubesRplApplicationTests]: TubesRplApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-10:52:38.064 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.TubesRPL.TubesRplApplication for test class com.example.TubesRPL.TubesRplApplicationTests
+  <testcase name="contextLoads()" classname="com.example.TubesRPL.TubesRplApplicationTests" time="0.552"/>
+  <system-out><![CDATA[15:17:01.811 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.TubesRPL.TubesRplApplicationTests]: TubesRplApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:17:01.899 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.TubesRPL.TubesRplApplication for test class com.example.TubesRPL.TubesRplApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,9 +14,9 @@
 
  :: Spring Boot ::                (v3.4.0)
 
-2024-12-14T10:52:38.397+07:00  INFO 22596 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Starting TubesRplApplicationTests using Java 23 with PID 22596 (started by User in F:\Campus Stuff\Codes\RPL\TubesRPL)
-2024-12-14T10:52:38.398+07:00  INFO 22596 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2024-12-14T10:52:39.786+07:00  INFO 22596 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Started TubesRplApplicationTests in 1.581 seconds (process running for 2.581)
+2024-12-15T15:17:02.225+07:00  INFO 21288 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Starting TubesRplApplicationTests using Java 23 with PID 21288 (started by User in F:\Campus Stuff\Codes\RPL\TubesRPL)
+2024-12-15T15:17:02.226+07:00  INFO 21288 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T15:17:03.622+07:00  INFO 21288 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Started TubesRplApplicationTests in 1.591 seconds (process running for 2.563)
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\User\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.15.10\e8eb255b2c378b9a6c7341e7b0e12f0a5636377\byte-buddy-agent-1.15.10.jar)

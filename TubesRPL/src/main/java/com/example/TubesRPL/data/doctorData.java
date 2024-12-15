@@ -9,6 +9,7 @@ public class doctorData {
     private String nip;
     private String nama;
     private int idKlinik;
+    private String spesialisasi;
     private double tarif;
     private int kuota;
     private String nomorTelepon;
@@ -22,6 +23,7 @@ public class doctorData {
 // rs.getString("nipDokter"),
 // rs.getString("nama"),
 // rs.getInt("idKlinik"),
+// rs.getString("spesialisasi"),
 // rs.getDouble("tarif"),
 // rs.getInt("kuota"),
 // rs.getString("nomorTelepon"),

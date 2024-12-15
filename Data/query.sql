@@ -98,7 +98,28 @@ SELECT * FROM pendaftaran
 --rekam medis
 INSERT INTO pemeriksaan (idPendaftaran, tekananDarah, tinggiBadan, beratBadan, suhuBadan, keluhan) VALUES (?,?,?,?,?,?)
 
-
+--cari jadwal
+SELECT DISTINCT
+    jadwal.hari,
+    jadwal.jamMulai,
+    jadwal.jamSelesai,
+    jadwal_dokter.ruangan,
+    CASE jadwal.hari 
+        WHEN 'Senin' THEN 1
+        WHEN 'Selasa' THEN 2
+        WHEN 'Rabu' THEN 3
+        WHEN 'Kamis' THEN 4
+        WHEN 'Jumat' THEN 5
+        WHEN 'Sabtu' THEN 6
+        WHEN 'Minggu' THEN 7
+        ELSE 8
+    END AS day_order
+FROM jadwal
+JOIN jadwal_dokter ON jadwal.idJadwal = jadwal_dokter.idJadwal
+JOIN dokter ON jadwal_dokter.nipDokter = dokter.nipDokter
+JOIN klinik ON dokter.idKlinik = klinik.idKlinik
+WHERE dokter.nipDokter = '198305162021011001'
+ORDER BY day_order;
 
 
 
