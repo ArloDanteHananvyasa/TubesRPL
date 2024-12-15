@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color:  #94c3ff;
+    background-color: #94c3ff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +68,7 @@ h2 {
 .btn-login {
     width: 48%;
     padding: 10px;
-    background-color:  #2C2C2C;
+    background-color: #2C2C2C;
     color: white;
     font-size: 16px;
     border: none;
@@ -84,6 +84,7 @@ h2 {
 .btn-signup:hover {
     background-color: #357ab7;
 }
+
 /* Button style for Sign Up */
 .btn-signup {
     width: 48%;
@@ -98,7 +99,7 @@ h2 {
 
 
 /* Label styles */
-label[for="username"], label[for="password"] {
+label {
     font-weight: bold;
-    color: white;
+    color: white !important;
 }

@@ -4,12 +4,12 @@ INSERT INTO pasien (nik, nama, nomorTelepon, tanggalLahir, gender, email, passwo
 ('3201031998032109', 'Budi Santoso', '082112345678', '1998-03-21',  'pria', 'budi.santoso@hotmail.com', 'password');
 
 INSERT INTO perawat (nipPerawat, nama, nomorTelepon, password) VALUES
-('198405162021011001', 'Rina Kurniawati', '085234567890', 'password'),
+('198405162021011001', 'Rina Kurniawati', '081', 'password'),
 ('198902102019051002', 'Dewi Lestari', '085678901234', 'password'),
 ('199003052018031003', 'Ahmad Fauzan', '082345678901', 'password');
 
 INSERT INTO petugas_administrasi (nipPetugas, nama, nomorTelepon, password) VALUES
-('197512152020111001', 'Eko Prasetyo', '081345678901', 'password'),
+('197512152020111001', 'Eko Prasetyo', '082', 'password'),
 ('198010012019081002', 'Lina Marlina', '085123456789', 'password'),
 ('198706232018091003', 'Hendra Wijaya', '082123456789', 'password');
 
@@ -44,7 +44,7 @@ INSERT INTO klinik (idKlinik, spesialisasi) VALUES
 
 INSERT INTO dokter (nipDokter, nama, idKlinik, tarif, kuota, password, nomorTelepon) VALUES
 -- Klinik Penyakit Dalam
-('198305162021011001', 'Dr. Andi Pratama, Sp.PD', 1, 250000, 10, 'password', '081234567890'),
+('198305162021011001', 'Dr. Andi Pratama, Sp.PD', 1, 250000, 10, 'password', '083'),
 ('197809122019081002', 'Dr. Siti Hidayati, Sp.PD', 1, 275000, 12, 'password', '087654321098'),
 -- Klinik Kardiologi
 ('197506202018031003', 'Dr. Budi Santoso, Sp.JP', 2, 300000, 15, 'password', '082345678901'),
@@ -130,6 +130,7 @@ VALUES
 -- For Budi Santoso
 ('2024-12-02', '2024-12-03', '3201031998032109', '198305162021011001', 1, true, 5),  -- Dr. Andi Pratama
 ('2024-12-06', '2024-12-07', '3201031998032109', '198312012020021009', 9, true, 4);  -- Dr. Arif Nugroho
+('2024-12-06', '2024-12-07', '3201031998032109', '198312012020021009', 7, true, 4);  -- Dr. Arif Nugroho
 
 INSERT INTO pemeriksaan (idPendaftaran, tekananDarah, tinggiBadan, beratBadan, suhuBadan, keluhan, nipPerawat) 
 VALUES 
@@ -169,16 +170,16 @@ VALUES
 
 
 -- Insert into resep_obat table
-INSERT INTO resep_obat (idResep, namaObat, dosis, instruksiPenggunaan)
+INSERT INTO resep_obat (idResep, namaObat, jumlah, dosis, instruksiPenggunaan)
 VALUES 
 -- For Sakit Kepala Ringan
-(1, 'Paracetamol', '1 tablet/8 jam', 'Konsumsi setelah makan dengan segelas air putih'),
+(1, 'Paracetamol', '14 tablet', '1 tablet/8 jam', 'Konsumsi setelah makan dengan segelas air putih'),
 -- For Bronkitis Akut
-(2, 'Amoxicillin', '1 tablet/8 jam', 'Konsumsi setelah makan hingga habis'),
-(2, 'Paracetamol', '1 tablet/8 jam', 'Konsumsi setelah makan untuk meredakan demam'),
+(2, 'Amoxicillin', '10 tablet', '1 tablet/8 jam', 'Konsumsi setelah makan hingga habis'),
+(2, 'Paracetamol', '8 tablet', '1 tablet/8 jam', 'Konsumsi setelah makan untuk meredakan demam'),
 -- For Vertigo Ringan
-(3, 'Paracetamol', '1 tablet/hari', 'Konsumsi setelah makan jika diperlukan'),
+(3, 'Paracetamol', '14 tablet', '1 tablet/hari', 'Konsumsi setelah makan jika diperlukan'),
 -- For Angina
-(4, 'Amlodipine', '1 tablet/hari', 'Dikonsumsi pada waktu yang sama setiap hari untuk mencegah angina'),
-(4, 'Clopidogrel', '1 tablet/hari', 'Dikonsumsi setelah makan untuk mencegah pembekuan darah');
+(4, 'Amlodipine', '7 tablet', '1 tablet/hari', 'Dikonsumsi pada waktu yang sama setiap hari untuk mencegah angina'),
+(4, 'Clopidogrel', '7 tablet', '1 tablet/hari', 'Dikonsumsi setelah makan untuk mencegah pembekuan darah');
 

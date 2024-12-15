@@ -25,6 +25,8 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password..." required>
             </div>
+            <p style="color: red;" th:text="${error}"></p>
+            <br>
             <!-- Button container -->
             <div class="button-container">
                 <button type="submit" class="btn-login">Login</button>

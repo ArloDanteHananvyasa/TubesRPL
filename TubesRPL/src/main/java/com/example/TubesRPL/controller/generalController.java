@@ -2,6 +2,7 @@ package com.example.TubesRPL.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,9 +32,15 @@ public class generalController {
 
     @PostMapping("/login/submit")
     public String submitLogin(@RequestParam("nomorTelepon") String nohp, @RequestParam("password") String pass,
-            HttpSession session) {
+            HttpSession session, Model model) {
 
         loginData ld = repo.login(nohp, pass);
+
+        if (ld == null) {
+            model.addAttribute("error", "Akun kamu tidak ditemukan");
+
+            return "general/login";
+        }
 
         System.out.println(ld);
 

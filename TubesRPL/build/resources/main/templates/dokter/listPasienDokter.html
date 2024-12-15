@@ -33,34 +33,73 @@
                             <th>Umur</th>
                             <th>Jenis Kelamin</th>
                             <th>Cek Hasil Pemeriksaan</th>
-                            <th>Diagnosa dan Resep</th>
+                            <th>Diagnosa</th>
+                            <th>Resep</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- jadiin data -->
-                        <tr>
-                            <td>TEST</td>
-                            <td>TEST</td>
-                            <td>TEST</td>
-                            <td><a th:href="@{/dokter/diagnosa}"><button>Lihat Detail</button></a></td>
-                            <!-- disable aja kalo udah dipencet -->
-                            <td><a th:href="@{/dokter/diagnosa}"><button>Diagnosa dan Resep</button></a></td>
-                        </tr>
-                        <!-- jadiin data -->
                         <tr th:each="row : ${rows}">
-                            <td th:text="${row.nama}"></td>
-                            <td th:text="${row.umur}"></td>
-                            <td th:text="${row.gender}"></td>
+                            <td th:text="${row.pasienNama}"></td>
+                            <td th:text="${row.pasienUmur}"></td>
+                            <td th:text="${row.pasienGender}"></td>
                             <!-- disable aja kalo udah dipencet -->
                             <td><a
-                                    th:href="@{/dokter/detail-pasien(nik=${row.nik}, idPendaftaran=${row.idPendaftaran})}"><button>Lihat
+                                    th:href="@{/dokter/detail-pasien(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Lihat
                                         Detail</button></a></td>
-                            <td><a th:href="@{/dokter/diagnosa(nik=${row.nik}, idPendaftaran=${row.idPendaftaran})}"><button>Diagnosa
-                                        dan Resep</button></a></td>
+                            <td><a
+                                    th:href="@{/dokter/diagnosa(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Diagnosa</button></a>
+                            </td>
+                            <td><a
+                                    th:href="@{/dokter/resep(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Resep</button></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div th:if="${pasienDetail != null}">
+            <div class="modal-content">
+                <h2>Hasil Pemeriksaan Pasien</h2>
+                <div class="modal-container">
+                    <div class="left-modal">
+                        <p>
+                            <strong>Tekanan Darah:</strong><br />
+                            <span th:text="${pasienDetail.tekananDarah}"></span>
+                        </p>
+                        <p>
+                            <strong>Tinggi Badan:</strong><br />
+                            <span th:text="${pasienDetail.tinggiBadan}"></span>
+                        </p>
+                        <p>
+                            <strong>Berat Badan:</strong><br />
+                            <span th:text="${pasienDetail.beratBadan}"></span>
+                        </p>
+                        <p>
+                            <strong>Suhu Badan:</strong><br />
+                            <span th:text="${pasienDetail.suhuBadan}"></span>
+                        </p>
+                        <p>
+                            <strong>Keluhan:</strong><br />
+                            <span th:text="${pasienDetail.keluhan}"></span>
+                        </p>
+                        <p>
+                            <strong>Perawat:</strong><br />
+                            <span th:text="${pasienDetail.namaPerawat}"></span>
+                        </p>
+                        <p>
+                            <strong>Download Hasil Lab:</strong>
+                        </p>
+                        <ul>
+                            <li th:each="hasil : ${hasilLab}">
+                                <span th:text="${hasil.namaFile}"></span>
+                                <a th:href="@{/dokter/download-lab(idLab=${hasil.idLab})}"><button>Download</button></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="/dokter/lihat-pasien" class="close-button"><button>Close</button></a>
         </div>
     </main>
 </body>

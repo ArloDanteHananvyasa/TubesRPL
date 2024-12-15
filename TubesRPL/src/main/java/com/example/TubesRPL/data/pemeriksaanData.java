@@ -7,12 +7,14 @@ import lombok.Data;
 @AllArgsConstructor
 public class pemeriksaanData {
     private int idPemeriksaan;
+    private int idPendaftaran;
     private String tekananDarah;
     private double tinggiBadan;
     private double beratBadan;
     private double suhuBadan;
     private String keluhan;
     private String nipPerawat;
+    private String namaPerawat;
 }
 
 // private pemeriksaanData mapRowToPemeriksaanData(ResultSet rs, int rowNum)
@@ -20,6 +22,7 @@ public class pemeriksaanData {
 // // Create pemeriksaanData object using constructor
 // return new pemeriksaanData(
 // rs.getInt("idPemeriksaan"),
+// rs.getInt("idPendaftaran"),
 // rs.getString("tekananDarah"),
 // rs.getDouble("tinggiBadan"),
 // rs.getDouble("beratBadan"),

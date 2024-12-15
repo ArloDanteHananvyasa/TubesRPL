@@ -30,33 +30,26 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Usia</th>
-                        <th>NIK</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Nama Dokter</th>
                         <th>Rekam Data</th>
                         <th>Hasil Lab</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr>
-                        <td>1</td>
-                        <td>TEST</td>
-                        <td>TEST</td>
-                        <td>TEST</td>
-                        <td><a th:href="@{/perawat/rekam(nik=3129837129837)}"><button>Rekam</button></a></td>
-                        <td><a th:href="@{/perawat/upload(nik=3129837129837)}"><button>Upload</button></a></td>
-                    </tr> -->
-
                     <tr th:each="row, iterStat : ${results}">
                         <td th:text="${iterStat.index + 1}"></td>
-                        <td th:text="${row.nama}"></td>
-                        <td th:text="${row.usia}"></td>
-                        <td th:text="${row.nik}"></td>
-                        <td th:value="${row.nik}">
-                            <a th:href="@{/perawat/rekam(nik=${row.nik}, idPendaftaran=${row.idPendaftaran})}">
+                        <td th:text="${row.pasienNama}"></td>
+                        <td th:text="${row.pasienUmur}"></td>
+                        <td th:text="${row.pasienGender}"></td>
+                        <td th:text="${row.dokterNama}"></td>
+                        <td>
+                            <a th:href="@{/perawat/rekam(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}">
                                 <button>Rekam</button>
                             </a>
                         </td>
-                        <td th:value="${row.nik}">
-                            <a th:href="@{/perawat/rekam(nik=${row.nik}, idPendaftaran=${row.idPendaftaran})}">
+                        <td>
+                            <a th:href="@{/perawat/upload(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}">
                                 <button>Upload</button>
                             </a>
                         </td>

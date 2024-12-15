@@ -25,7 +25,7 @@
         <div class="form-container">
             <h1>Upload Hasil Laboratorium</h1>
 
-            <form th:action="@{/perawat/upload/submit}" th:method="post">
+            <form th:action="@{/perawat/upload/submit}" th:method="post" enctype="multipart/form-data">
                 <div class="form-field">
                     <label for="tanggalPemeriksaan">Tanggal Pemeriksaan</label>
                     <input type="date" id="tanggalPemeriksaan" name="tanggalPemeriksaan">
@@ -39,7 +39,7 @@
                         <label for="actual-file" class="upload-btn">
                             <span class="upload-icon">⬆</span>
                         </label>
-                        <input type="file" id="actual-file" hidden>
+                        <input type="file" id="actual-file" name="inputFile" hidden>
                     </div>
                 </div>
 

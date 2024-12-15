@@ -32,12 +32,14 @@ public class perawatService implements perawatRepo {
 
     @Override
     public void sumbitLabPasien(int idPendaftaran, Date tanggal, MultipartFile file) {
+        String fileName = file.getOriginalFilename();
         try {
             byte[] filebytes = file.getBytes();
 
-            jdbc.update("INSERT INTO hasil_lab (idPendaftaran, tanggalLab, hasilLab) VALUES (?,?,?)", idPendaftaran,
+            jdbc.update("INSERT INTO hasil_lab (idPendaftaran, tanggalLab, hasilLab, namaFile) VALUES (?,?,?,?)",
+                    idPendaftaran,
                     tanggal,
-                    filebytes);
+                    filebytes, fileName);
         } catch (Exception e) {
             System.out.println(e);
         }

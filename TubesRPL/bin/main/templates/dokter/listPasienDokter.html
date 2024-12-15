@@ -32,31 +32,27 @@
                             <th>Nama</th>
                             <th>Umur</th>
                             <th>Jenis Kelamin</th>
-                            <th>Hari</th>
-                            <th>Jam</th>
-                            <th>Diagnosa dan Resep</th>
+                            <th>Cek Hasil Pemeriksaan</th>
+                            <th>Diagnosa</th>
+                            <th>Resep</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- jadiin data -->
-                        <tr>
-                            <td>TEST</td>
-                            <td>TEST</td>
-                            <td>TEST</td>
-                            <td>TEST</td>
-                            <td>TEST</td>
-                            <!-- disable aja kalo udah dipencet -->
-                            <td><a th:href="@{/dokter/diagnosa}"><button>Diagnosa dan Resep</button></a></td>
-                        </tr>
-                        <!-- jadiin data -->
                         <tr th:each="row : ${rows}">
-                            <td th:text="${row.nama}"></td>
-                            <td th:text="${row.umur}"></td>
-                            <td th:text="${row.gender}"></td>
-                            <td th:text="${row.hari}"></td>
-                            <td th:text="${row.jam}"></td>
+                            <td th:text="${row.pasienNama}"></td>
+                            <td th:text="${row.pasienUmur}"></td>
+                            <td th:text="${row.pasienGender}"></td>
                             <!-- disable aja kalo udah dipencet -->
-                            <td th:value="${row.nik}">Diagnosa dan Resep</td>
+                            <td><a
+                                    th:href="@{/dokter/detail-pasien(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Lihat
+                                        Detail</button></a></td>
+                            <td><a
+                                    th:href="@{/dokter/diagnosa(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Diagnosa</button></a>
+                            </td>
+                            <td><a
+                                    th:href="@{/dokter/resep(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Resep</button></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
