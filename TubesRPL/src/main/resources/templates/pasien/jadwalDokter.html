@@ -48,10 +48,11 @@
                                     <td th:text="${schedule.hari}"></td>
                                     <td th:text="${schedule.jamMulai + ' - ' + schedule.jamSelesai}"></td>
                                     <td th:text="'Ruangan ' + ${schedule.ruangan}"></td>
-                                    <a
-                                        th:href="@{/pasien/book(nip = ${doctor.dokter.nip}, idJadwal = ${schedule.idJadwal})}">
-                                        <button class="book-btn">Book</button>
-                                    </a>
+                                    <td><a
+                                            th:href="@{/pasien/book(nip = ${doctor.dokter.nip}, idJadwal = ${schedule.idJadwal})}">
+                                            <button class="book-btn">Book</button>
+                                        </a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

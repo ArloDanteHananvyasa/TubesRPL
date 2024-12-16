@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.TubesRPL.data.appointmentData;
 import com.example.TubesRPL.data.doctorData;
 import com.example.TubesRPL.data.jadwalData;
+import com.example.TubesRPL.data.loginData;
 import com.example.TubesRPL.repository.adminRepo;
 
 import jakarta.servlet.http.HttpSession;
@@ -32,6 +33,12 @@ public class adminController {
     @GetMapping("/lihat-pasien")
     public String showPasienAdmin(@RequestParam(value = "filter", required = false) String filter, HttpSession session,
             Model model) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
         List<appointmentData> list;
 
         if (filter == null) {
@@ -49,6 +56,12 @@ public class adminController {
     public String showJadwal(@RequestParam(value = "filter", required = false) String filter,
             HttpSession session,
             Model model) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
 
         List<jadwalData> list;
 
@@ -68,6 +81,12 @@ public class adminController {
     public String showDetailPasien(@RequestParam("nip") String nip, @RequestParam("idJadwal") int idJadwal,
             @RequestParam(value = "filter", required = false) String filter,
             HttpSession session, Model model) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
 
         List<doctorData> list1 = repo.findDokterWithNIP(nip);
         List<jadwalData> list;
@@ -97,6 +116,12 @@ public class adminController {
             @RequestParam("schedule") int idJadwalBaru,
             @RequestParam("ruangPraktek") String ruangPraktek, HttpSession session, Model model) {
 
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
+
         int idJadwalLama = (int) session.getAttribute("idJadwal");
 
         System.out.println(session.getAttribute("nipDokter"));
@@ -118,6 +143,13 @@ public class adminController {
     @GetMapping("/konfirmasi-booking")
     public String showBooking(@RequestParam(value = "filter", required = false) String filter, HttpSession session,
             Model model) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
+
         List<appointmentData> list;
 
         if (filter == null) {
@@ -135,6 +167,12 @@ public class adminController {
     public String confirmBooking(@RequestParam(value = "idPendaftaran") int idPendaftaran, HttpSession session,
             Model model) {
 
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
+
         repo.confirmBooking(idPendaftaran);
 
         return "redirect:/admin/konfirmasi-booking";
@@ -143,6 +181,12 @@ public class adminController {
     @GetMapping("/konfirmasi-pembayaran")
     public String showPembayaran(@RequestParam(value = "filter", required = false) String filter, HttpSession session,
             Model model) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
         List<appointmentData> list;
 
         if (filter == null) {
@@ -159,7 +203,13 @@ public class adminController {
     @PostMapping("/konfirmasi-pembayaran/submit")
     public String confirmBooking(
             @RequestParam("idPendaftaran") int idPendaftaran,
-            @RequestParam("metodePembayaran") Integer metodePembayaran) {
+            @RequestParam("metodePembayaran") Integer metodePembayaran, HttpSession session) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
 
         // Handle logic for the booking confirmation
         // Example:
