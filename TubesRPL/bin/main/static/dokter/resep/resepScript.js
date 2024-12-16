@@ -2,11 +2,12 @@
 
 function addResep() {
   const namaObat = document.getElementById('nama-obat').value;
-  const jumlahDosis = document.getElementById('jumlah-dosis').value;
+  const jumlah = document.getElementById('jumlah').value;
+  const dosis = document.getElementById('dosis').value;
   const waktuMinum = document.getElementById('waktu-minum').value;
 
   // Validasi input
-  if (namaObat === '' || jumlahDosis === '' || waktuMinum === '') {
+  if (namaObat === '' || dosis === '' || waktuMinum === '') {
     alert('Semua field harus diisi!');
     return;
   }
@@ -16,7 +17,7 @@ function addResep() {
   const newRow = document.createElement('tr');
   newRow.innerHTML = `
     <td>${namaObat}</td>
-    <td>${jumlahDosis} kali/hari</td>
+    <td>${dosis} kali/hari</td>
     <td>${waktuMinum === 'sebelum-makan' ? 'Sebelum Makan' : 'Sesudah Makan'}</td>
     <td><button class="action-btn" onclick="deleteRow(this)">Hapus</button></td>
   `;

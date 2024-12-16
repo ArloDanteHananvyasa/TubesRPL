@@ -79,11 +79,10 @@ CREATE TABLE pendaftaran (
     tanggalPendaftaran DATE NOT NULL,
     tanggalKunjungan DATE NOT NULL,
     sudahDatang BOOLEAN DEFAULT FALSE,
-    idJadwal INT NOT NULL,
-    nipDokter CHAR(18) NOT NULL,
+    idJadwal INT NOT NULL REFERENCES jadwal(idJadwal),
+    nipDokter CHAR(18) NOT NULL REFERENCES dokter(nipDokter),
     nikPasien CHAR(18) REFERENCES pasien(nik),
-    idMetode INT REFERENCES metode_pembayaran(idMetode) DEFAULT NULL,
-    FOREIGN KEY (idJadwal, nipDokter) REFERENCES jadwal_dokter(idJadwal, nipDokter)
+    idMetode INT REFERENCES metode_pembayaran(idMetode) DEFAULT NULL
 );
 
 

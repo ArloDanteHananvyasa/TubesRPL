@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.TubesRPL.TubesRplApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-15T08:17:03" hostname="DESKTOP-LAEV87T" time="0.552">
+<testsuite name="com.example.TubesRPL.TubesRplApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-16T10:24:41" hostname="LAPTOP-4EJ8M2QF" time="1.212">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.TubesRPL.TubesRplApplicationTests" time="0.552"/>
-  <system-out><![CDATA[15:17:01.811 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.TubesRPL.TubesRplApplicationTests]: TubesRplApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:17:01.899 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.TubesRPL.TubesRplApplication for test class com.example.TubesRPL.TubesRplApplicationTests
+  <testcase name="contextLoads()" classname="com.example.TubesRPL.TubesRplApplicationTests" time="1.212"/>
+  <system-out><![CDATA[17:24:38.310 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.TubesRPL.TubesRplApplicationTests]: TubesRplApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:24:38.519 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.TubesRPL.TubesRplApplication for test class com.example.TubesRPL.TubesRplApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,14 +14,9 @@
 
  :: Spring Boot ::                (v3.4.0)
 
-2024-12-15T15:17:02.225+07:00  INFO 21288 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Starting TubesRplApplicationTests using Java 23 with PID 21288 (started by User in F:\Campus Stuff\Codes\RPL\TubesRPL)
-2024-12-15T15:17:02.226+07:00  INFO 21288 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2024-12-15T15:17:03.622+07:00  INFO 21288 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Started TubesRplApplicationTests in 1.591 seconds (process running for 2.563)
+2024-12-16T17:24:39.186+07:00  INFO 9240 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Starting TubesRplApplicationTests using Java 17.0.4.1 with PID 9240 (started by Arlo Dante Hananvyas in D:\Codes\TubesRPL\TubesRPL)
+2024-12-16T17:24:39.189+07:00  INFO 9240 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-12-16T17:24:41.940+07:00  INFO 9240 --- [TubesRPL] [    Test worker] c.e.TubesRPL.TubesRplApplicationTests    : Started TubesRplApplicationTests in 3.144 seconds (process running for 4.979)
 ]]></system-out>
-  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (C:\Users\User\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.15.10\e8eb255b2c378b9a6c7341e7b0e12f0a5636377\byte-buddy-agent-1.15.10.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>
