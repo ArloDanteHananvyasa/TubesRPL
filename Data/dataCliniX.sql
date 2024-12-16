@@ -131,6 +131,7 @@ VALUES
 ('2024-12-02', '2024-12-03', '3201031998032109', '198305162021011001', 1, true, 5),  -- Dr. Andi Pratama
 ('2024-12-06', '2024-12-07', '3201031998032109', '198312012020021009', 9, true, 4),  -- Dr. Arif Nugroho
 ('2024-12-06', '2024-12-07', '3201012001010001', '198312012020021009', 9, true, 4);  -- Dr. Arif Nugroho
+('2024-12-06', '2024-12-07', '3201012001010001', '198312012020021009', 9, true, null);  -- Dr. Arif Nugroho
 
 INSERT INTO pemeriksaan (idPendaftaran, tekananDarah, tinggiBadan, beratBadan, suhuBadan, keluhan, nipPerawat) 
 VALUES 

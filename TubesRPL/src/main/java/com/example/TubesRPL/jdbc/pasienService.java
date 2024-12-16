@@ -3,6 +3,7 @@ package com.example.TubesRPL.jdbc;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
@@ -48,9 +49,75 @@ public class pasienService implements pasienRepo {
 
     @Override
     public void insertPendaftaran(String nipDokter, int idJadwal, String nikPasien, Date tanggalPendaftaran) {
+        // Get today's date and determine the day of the week
+        LocalDate today = LocalDate.now();
+        int todayDayOfWeek = today.getDayOfWeek().getValue(); // 1=Monday, 7=Sunday
+
+        // Determine the target tanggalKunjungan based on idJadwal
+        LocalDate targetDate = today;
+
+        if (idJadwal == 1 || idJadwal == 2) { // Monday sessions
+            if (todayDayOfWeek == 1) { // Today is Monday
+                targetDate = today;
+            } else if (todayDayOfWeek < 1) { // If today is before Monday, set to this Monday
+                targetDate = today.with(DayOfWeek.MONDAY);
+            } else { // If today is after Monday, set to next Monday
+                targetDate = today.plusWeeks(1).with(DayOfWeek.MONDAY);
+            }
+        } else if (idJadwal == 3 || idJadwal == 4) { // Tuesday sessions
+            if (todayDayOfWeek == 2) { // Today is Tuesday
+                targetDate = today;
+            } else if (todayDayOfWeek < 2) { // If today is before Tuesday, set to this Tuesday
+                targetDate = today.with(DayOfWeek.TUESDAY);
+            } else { // If today is after Tuesday, set to next Tuesday
+                targetDate = today.plusWeeks(1).with(DayOfWeek.TUESDAY);
+            }
+        } else if (idJadwal == 5 || idJadwal == 6) { // Wednesday sessions
+            if (todayDayOfWeek == 3) { // Today is Wednesday
+                targetDate = today;
+            } else if (todayDayOfWeek < 3) { // If today is before Wednesday, set to this Wednesday
+                targetDate = today.with(DayOfWeek.WEDNESDAY);
+            } else { // If today is after Wednesday, set to next Wednesday
+                targetDate = today.plusWeeks(1).with(DayOfWeek.WEDNESDAY);
+            }
+        } else if (idJadwal == 7 || idJadwal == 8) { // Thursday sessions
+            if (todayDayOfWeek == 4) { // Today is Thursday
+                targetDate = today;
+            } else if (todayDayOfWeek < 4) { // If today is before Thursday, set to this Thursday
+                targetDate = today.with(DayOfWeek.THURSDAY);
+            } else { // If today is after Thursday, set to next Thursday
+                targetDate = today.plusWeeks(1).with(DayOfWeek.THURSDAY);
+            }
+        } else if (idJadwal == 9 || idJadwal == 10) { // Friday sessions
+            if (todayDayOfWeek == 5) { // Today is Friday
+                targetDate = today;
+            } else if (todayDayOfWeek < 5) { // If today is before Friday, set to this Friday
+                targetDate = today.with(DayOfWeek.FRIDAY);
+            } else { // If today is after Friday, set to next Friday
+                targetDate = today.plusWeeks(1).with(DayOfWeek.FRIDAY);
+            }
+        } else if (idJadwal == 11 || idJadwal == 12) { // Saturday sessions
+            if (todayDayOfWeek == 6) { // Today is Saturday
+                targetDate = today;
+            } else if (todayDayOfWeek < 6) { // If today is before Saturday, set to this Saturday
+                targetDate = today.with(DayOfWeek.SATURDAY);
+            } else { // If today is after Saturday, set to next Saturday
+                targetDate = today.plusWeeks(1).with(DayOfWeek.SATURDAY);
+            }
+        } else if (idJadwal == 13) { // Sunday session
+            if (todayDayOfWeek == 7) { // Today is Sunday
+                targetDate = today;
+            } else if (todayDayOfWeek < 7) { // If today is before Sunday, set to this Sunday
+                targetDate = today.with(DayOfWeek.SUNDAY);
+            } else { // If today is after Sunday, set to next Sunday
+                targetDate = today.plusWeeks(1).with(DayOfWeek.SUNDAY);
+            }
+        }
+
+        // Insert into pendaftaran with the calculated tanggalKunjungan
         jdbc.update(
                 "INSERT INTO pendaftaran (tanggalPendaftaran, idJadwal, nipDokter, nikPasien, tanggalKunjungan) VALUES (?, ?, ?, ?, ?)",
-                tanggalPendaftaran, idJadwal, nipDokter, nikPasien, tanggalPendaftaran);
+                tanggalPendaftaran, idJadwal, nipDokter, nikPasien, Date.valueOf(targetDate));
     }
 
     private List<doctorData> findAllDoctors() {

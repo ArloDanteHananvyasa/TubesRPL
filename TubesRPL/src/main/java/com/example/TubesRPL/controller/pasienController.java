@@ -32,7 +32,13 @@ public class pasienController {
     }
 
     @GetMapping("/jadwal-dokter")
-    public String showJadwalDokter(Model model) {
+    public String showJadwalDokter(HttpSession session, Model model) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
         List<dokterWithJadwal> dokter = repo.cariJadwal();
 
         model.addAttribute("doctorsWithSchedules", dokter);
@@ -46,6 +52,10 @@ public class pasienController {
 
         loginData ld = (loginData) session.getAttribute("loginData");
 
+        if (ld == null) {
+            return "redirect:/login";
+        }
+
         String nikPasien = ld.getNik();
 
         Date tanggalPendaftaran = Date.valueOf(LocalDate.now());
@@ -57,7 +67,12 @@ public class pasienController {
 
     @GetMapping("/lihat-riwayat")
     public String showRiwayat(HttpSession session, Model model) {
+
         loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
 
         String nikPasien = ld.getNik();
 
@@ -69,7 +84,13 @@ public class pasienController {
     }
 
     @GetMapping("/lihat-resep")
-    public String showResep(@RequestParam("id") int idPendaftaran, Model model) {
+    public String showResep(@RequestParam("id") int idPendaftaran, HttpSession session, Model model) {
+
+        loginData ld = (loginData) session.getAttribute("loginData");
+
+        if (ld == null) {
+            return "redirect:/login";
+        }
 
         List<resepWithCatatan> list = repo.lihatResep(idPendaftaran);
 
