@@ -20,15 +20,13 @@ public class pasienData {
 
 // private pasienData mapRowToPasienData(ResultSet rs, int rowNum) throws
 // SQLException {
-// // Convert DOB to LocalDate
 // LocalDate dobLocalDate = null;
-// if (rs.getDate("dob") != null) {
-// dobLocalDate =
-// rs.getDate("dob").toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+// if (rs.getDate("tanggalLahir") != null) {
+// dobLocalDate = rs.getDate("tanggalLahir").toLocalDate();
 // }
 
-// // Calculate age
-// int umur = (dobLocalDate != null) ? Period.between(dobLocalDate,
+// // Calculate patient's age
+// int pasienUmur = (dobLocalDate != null) ? Period.between(dobLocalDate,
 // LocalDate.now()).getYears() : 0;
 
 // // Create pasienData object using @AllArgsConstructor
@@ -39,6 +37,6 @@ public class pasienData {
 // rs.getString("password"),
 // rs.getString("gender"),
 // rs.getDate("tanggalLahir"),
-// umur,
+// pasienUmur,
 // rs.getString("email"));
 // }

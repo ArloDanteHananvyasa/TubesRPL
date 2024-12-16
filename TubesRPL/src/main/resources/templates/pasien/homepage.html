@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    /* template font */
+    @font-face {
+      font-family: "Inter";
+      src: url("fonts/Inter-Regular.woff2") format("woff2"),
+        url("fonts/Inter-Regular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Template warna */
+    :root {
+      --button: #2c2c2c;
+      --window: #23436b;
+      --background: #94c3ff;
+    }
+
+    /* contoh penggunaan */
+    body {
+      background-color: var(--background);
+    }
+
+    button {
+      background-color: var(--button);
+    }
+
+    p {
+      font-family: "Inter";
+    }
+  </style>
+
+  <link rel="stylesheet" href="/pasien/homepage/homepageStyle.css" />
+
+  <!-- jangan lupa tambahin ini ke "HEAD" htmlnya -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <img src="/pasien/homepage/clinix.png" alt="Logo" class="logo-img" />
+        CliniX
+      </div>
+
+      <div class="profile-icon">
+        <img src="/pasien/homepage/profile-icon.png" alt="Profile" />
+      </div>
+    </header>
+    <main class="main-content">
+      <a th:href="@{/pasien/jadwal-dokter}">
+        <div class="card" id="btn-booking">
+          <div class="icon">
+            <img src="/pasien/homepage/appointment.png" alt="Booking Icon" />
+          </div>
+          <div class="text">Buat Janjian</div>
+        </div>
+      </a>
+
+      <a th:href="@{/pasien/lihat-riwayat}">
+        <div class="card" id="btn-lihat_resep">
+          <div class="icon">
+            <img src="/pasien/homepage/medicine.png" alt="Recipe Icon" />
+          </div>
+          <div class="text">Lihat Riwayat Janian</div>
+        </div>
+      </a>
+    </main>
+  </div>
+</body>
+
+</html>
