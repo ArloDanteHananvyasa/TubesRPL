@@ -50,37 +50,48 @@
         <img src="/clinix.png" alt="Logo" class="logo-img" />
         CliniX
       </div>
+      <div class="logout-container">
+        <a th:href="@{/logout}" class="logout">Logout</a>
+      </div>
 
       <div class="profile-icon">Admin</div>
     </header>
     <main class="main-content">
-      <div class="card" id="btn-jadwal">
-        <div class="icon">
-          <img src="/admin/homepage/calendar-icon.png" alt="Jadwal Icon" />
+      <a th:href="@{/admin/atur-jadwal}">
+        <div class="card" id="btn-jadwal">
+          <div class="icon">
+            <img src="/admin/homepage/calendar-icon.png" alt="Jadwal Icon" />
+          </div>
+          <div class="text">Jadwal</div>
         </div>
-        <div class="text">Jadwal</div>
-      </div>
+      </a>
 
-      <div class="card" id="btn-listPasien">
-        <div class="icon">
-          <img src="/admin/homepage/user-icon.png" alt="DaftarPasien Icon" />
+      <a th:href="@{/admin/lihat-pasien}">
+        <div class="card" id="btn-listPasien">
+          <div class="icon">
+            <img src="/admin/homepage/user-icon.png" alt="DaftarPasien Icon" />
+          </div>
+          <div class="text">Daftar Pasien</div>
         </div>
-        <div class="text">Daftar Pasien</div>
-      </div>
+      </a>
 
-      <div class="card" id="btn-validasi">
-        <div class="icon">
-          <img src="/admin/homepage/appointment.png" alt="Validasi Icon" />
+      <a th:href="@{/admin/konfirmasi-booking}">
+        <div class="card" id="btn-validasi">
+          <div class="icon">
+            <img src="/admin/homepage/appointment.png" alt="Validasi Icon" />
+          </div>
+          <div class="text">Validasi Booking</div>
         </div>
-        <div class="text">Validasi Booking</div>
-      </div>
+      </a>
 
-      <div class="card" id="btn-tagih">
-        <div class="icon">
-          <img src="/admin/homepage/medical.png" alt="Tagih Icon" />
+      <a th:href="@{/admin/konfirmasi-pembayaran}">
+        <div class="card" id="btn-tagih">
+          <div class="icon">
+            <img src="/admin/homepage/medical.png" alt="Tagih Icon" />
+          </div>
+          <div class="text">Konfirmasi Pembayaran</div>
         </div>
-        <div class="text">Tagih</div>
-      </div>
+      </a>
     </main>
   </div>
 </body>

@@ -15,7 +15,8 @@
         </div>
         <nav>
             <ul>
-                <li><a th:href="@{/dokter/home}">Home</a></li>
+                <li><a th:href="@{/admin/home}" class="home">Home</a></li>
+                <li><a th:href="@{/logout}" class="logout">Logout</a></li>
             </ul>
         </nav>
         <div class="user-icon">
@@ -45,7 +46,8 @@
                             <td th:text="${row.pasienGender}"></td>
                             <!-- disable aja kalo udah dipencet -->
                             <td><a
-                                    th:href="@{/dokter/detail-pasien(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Lihat
+                                    th:href="@{/dokter/detail-pasien(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button
+                                        id="lihat-detail">Lihat
                                         Detail</button></a></td>
                             <td><a
                                     th:href="@{/dokter/diagnosa(nik=${row.pasienNik}, idPendaftaran=${row.idPendaftaran})}"><button>Diagnosa</button></a>
@@ -58,7 +60,68 @@
                 </table>
             </div>
         </div>
+        <div class="detail-overlay-container" th:if="${pasienDetail != null}">
+            <div class="detail-overlay">
+                <h2>Hasil Pemeriksaan Pasien</h2>
+                <div class="detail-container">
+                    <div class="left-detail">
+                        <p>
+                            <strong>Tekanan Darah:</strong><br />
+                            <span th:text="${pasienDetail.tekananDarah}"></span>
+                        </p>
+                        <p>
+                            <strong>Tinggi Badan:</strong><br />
+                            <span th:text="${pasienDetail.tinggiBadan}"></span>
+                        </p>
+                        <p>
+                            <strong>Berat Badan:</strong><br />
+                            <span th:text="${pasienDetail.beratBadan}"></span>
+                        </p>
+                        <p>
+                            <strong>Suhu Badan:</strong><br />
+                            <span th:text="${pasienDetail.suhuBadan}"></span>
+                        </p>
+                        <p>
+                            <strong>Keluhan:</strong><br />
+                            <span th:text="${pasienDetail.keluhan}"></span>
+                        </p>
+                        <p>
+                            <strong>Perawat:</strong><br />
+                            <span th:text="${pasienDetail.namaPerawat}"></span>
+                        </p>
+                        <p>
+                            <strong>Download Hasil Lab:</strong>
+                        </p>
+                        <ul>
+                            <li th:each="hasil : ${hasilLab}">
+                                <span th:text="${hasil.namaFile}"></span>
+                                <a th:href="@{/dokter/download-lab(idLab=${hasil.idLab})}"><button>Download</button></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="/dokter/lihat-pasien" class="close-button"><button>Close</button></a>
+            </div>
+        </div>
     </main>
+    <script>
+        function showDetailOverlay() {
+            document.getElementById('detailOverlay').classList.remove('hide');
+        }
+
+        function closeDetailOverlay() {
+            document.getElementById('detailOverlay').classList.show('show');
+        }
+
+        const detailBtn = document.getElementById('lihat-detail');
+        detailBtn.addEventListener('click', showDetailOverlay);
+
+        const closeBtn = document.querySelector(".close-button");
+        closeBtn.addEventListener('click', closeDetailOverlay);
+
+
+
+    </script>
 </body>
 
 </html>

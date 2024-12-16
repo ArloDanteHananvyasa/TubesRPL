@@ -30,6 +30,14 @@ public class generalController {
         return "general/login";
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+
+        session.setAttribute("loginData", null);
+
+        return "redirect:/login";
+    }
+
     @PostMapping("/login/submit")
     public String submitLogin(@RequestParam("nomorTelepon") String nohp, @RequestParam("password") String pass,
             HttpSession session, Model model) {

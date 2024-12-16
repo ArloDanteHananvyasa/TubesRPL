@@ -75,8 +75,9 @@ main {
 
 /* Table Container */
 .table-container {
-    overflow-y: auto; /* Agar tabel dapat di-scroll */
-    max-height: 300px; /* Batas tinggi tabel */
+    overflow-y: auto;
+    max-height: 300px;
+    /* Batas tinggi tabel */
     border-radius: 8px;
     background-color: #fff;
     padding: 10px;
@@ -96,11 +97,6 @@ thead {
 thead th {
     padding: 10px;
     font-size: 1em;
-}
-
-thead td {
-
-    color: #000;
 }
 
 tbody tr:nth-child(odd) {
@@ -129,4 +125,79 @@ button {
 
 button:hover {
     background-color: #333;
+}
+
+/* Detail Overlay */
+.detail-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    max-width: 800px;
+    display: block;
+    /* Hidden by default */
+}
+
+/* Background Dimmer */
+.detail-overlay-container::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    /* Place it behind the overlay */
+}
+
+/* Show overlay when the 'show' class is added */
+.detail-overlay.hide {
+    display: none;
+    /* Display the overlay */
+}
+
+/* Detail Content */
+.detail-container {
+    margin-top: 10px;
+}
+
+.detail-container p {
+    margin-bottom: 10px;
+}
+
+.detail-container ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+.detail-container ul li {
+    margin-bottom: 5px;
+}
+
+/* Close Button */
+.close-button {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.close-button button {
+    padding: 10px 20px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-button button:hover {
+    background-color: #b71c1c;
 }
