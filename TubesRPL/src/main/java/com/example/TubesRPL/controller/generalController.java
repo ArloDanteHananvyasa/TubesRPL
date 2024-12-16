@@ -1,5 +1,6 @@
 package com.example.TubesRPL.controller;
 
+import java.sql.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,14 +62,22 @@ public class generalController {
 
     @GetMapping("/signup")
     public String showSignup() {
-        return "pasien/registrasi";
+        return "pasien/registration";
     }
 
     @PostMapping("/signup/submit")
-    public String submitSignup(HttpSession session) {
+    public String submitSignup(
+            @RequestParam("nik") String nik,
+            @RequestParam("nama") String nama,
+            @RequestParam("email") String email,
+            @RequestParam("no_hp") String nomorTelepon,
+            @RequestParam("password") String password,
+            @RequestParam("jenis_kelamin") String gender,
+            @RequestParam("ttl") Date tanggalLahir,
+            Model model, HttpSession session) {
 
-        // check which user then redirect using switch case
+        repo.register(nik, nama, nomorTelepon, password, gender, tanggalLahir, email);
 
-        return "redirect:/dokter/home";
+        return "redirect:/login";
     }
 }

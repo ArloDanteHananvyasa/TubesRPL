@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Sesi</title>
+    <link rel="stylesheet" href="/pasien/jadwalDokter/jadwalDokterStyle.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="/clinix.png" alt="CliniX Logo" class="logo">
+            <a th:href="@{/pasien/home}" class="home">Home</a>
+            <a th:href="@{/logout}" class="logout">Logout</a>
+        </div>
+        <nav class="nav">
+            <a href="#" class="nav-link profile-icon">
+                <img src="/pasien/jadwalDokter/user-icon.png" alt="User Logo" class="user-logo">
+            </a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">Booking Sesi</div>
+        <div class="doctor-list">
+            <!-- Loop Through the List of Doctors with Schedules -->
+            <div th:each="doctor : ${doctorsWithSchedules}">
+                <div class="doctor-item">
+                    <div class="doctor-info">
+                        <div class="details">
+                            <div class="name" th:text="${doctor.dokter.nama}">Dr Lisa Sp.JP</div>
+                            <div class="specialty" th:text="${doctor.dokter.spesialisasi}">Spesialis Jantung</div>
+                        </div>
+                    </div>
+                    <div class="schedule">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Hari</th>
+                                    <th>Jam</th>
+                                    <th>Ruangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop Through Each Doctor's Schedule -->
+                                <tr th:each="schedule : ${doctor.jadwal}">
+                                    <td th:text="${schedule.hari}"></td>
+                                    <td th:text="${schedule.jamMulai + ' - ' + schedule.jamSelesai}"></td>
+                                    <td th:text="'Ruangan ' + ${schedule.ruangan}"></td>
+                                    <a
+                                        th:href="@{/pasien/book(nip = ${doctor.dokter.nip}, idJadwal = ${schedule.idJadwal})}">
+                                        <button class="book-btn">Book</button>
+                                    </a>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

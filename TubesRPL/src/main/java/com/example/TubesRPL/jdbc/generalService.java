@@ -1,10 +1,10 @@
 package com.example.TubesRPL.jdbc;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.ZoneId;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,15 +107,25 @@ public class generalService implements generalRepo {
         return 0;
     }
 
+    @Override
+    public void register(String nik, String nama, String nomorTelepon, String password, String gender,
+            Date tanggalLahir, String email) {
+
+        jdbc.update(
+                "INSERT INTO pasien (nik, nama, nomorTelepon, password, gender, tanggalLahir, email) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                nik, nama, nomorTelepon, password, gender, tanggalLahir, email);
+
+    }
+
     private pasienData mapRowToPasienData(ResultSet rs, int rowNum) throws SQLException {
-        // Convert DOB to LocalDate
         LocalDate dobLocalDate = null;
-        if (rs.getDate("dob") != null) {
-            dobLocalDate = rs.getDate("dob").toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        if (rs.getDate("tanggalLahir") != null) {
+            dobLocalDate = rs.getDate("tanggalLahir").toLocalDate();
         }
 
-        // Calculate age
-        int umur = (dobLocalDate != null) ? Period.between(dobLocalDate, LocalDate.now()).getYears() : 0;
+        // Calculate patient's age
+        int pasienUmur = (dobLocalDate != null) ? Period.between(dobLocalDate,
+                LocalDate.now()).getYears() : 0;
 
         // Create pasienData object using @AllArgsConstructor
         return new pasienData(
@@ -125,7 +135,7 @@ public class generalService implements generalRepo {
                 rs.getString("password"),
                 rs.getString("gender"),
                 rs.getDate("tanggalLahir"),
-                umur,
+                pasienUmur,
                 rs.getString("email"));
     }
 
